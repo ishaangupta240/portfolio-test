@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" id="html-tag" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="preload" href="assets/images/image.avif" as="image">
+</head>
+<body>
+    <div class="loader">
+        <div class="counter">
+            0
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <div class="logo">
+                <h1>ISAN</h1>
+            </div>
+
+            <div class="logo-name">
+                <p>ISHAAN GUPTA ///////////</p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <div class="btn1">
+                <a href="projects.html">
+                    <button id="proj-btn" data-value="PROJECTS" aria-hidden="false" class="button">
+                        PROJECTS
+                    </button>
+                </a>
+            </div>
+
+            <div class="btn2">
+                <button id="info-btn" data-value="INFO" aria-hidden="false" class="button">
+                    INFO
+                </button>
+            </div>
+            
+            <div class="theme-btn">
+                <button onclick="changeClass()" class="button">&nbsp;</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sub-nav">
+        <p class="intro">
+            ISHAAN GUPTA IS AN INDEPENDENT CREATIVE DEVELOPER AND VFX ARTIST FOCUSING ON 3D / INTERACTION / SMOOTH ANIMATIONS. BASED IN NOIDA (IN) / CURRENTLY A STUDENT IN HIGH SCHOOL.
+        </p>
+    </div>
+
+    <div class="folio">
+        <p class="primary">FOLIO</p>
+        <p class="primary">/2024</p>
+    </div>
+    <a href="" id="project-link" draggable="false">
+        <div class="hero-img">
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+            <div class="mask" id="canvas"></div>
+        </div>
+    </a>
+
+    <div class="slide-copy">
+        <div class="slide-index">
+            <p id="project-counter-id" class="project-counter"></p>
+        </div>
+
+        <div class="slide-name">
+            <h2 id="project-id" data-value=""></h2>
+        </div>
+
+        <button data-value="VISIT" id="visit-btn" onclick= "updateParagraph();" class="visit-btn-class">
+            VISIT
+        </button>
+    </div>
+    
+    <div class="footer">
+        <div class="slide-info">
+           <div class="year">
+                <p>YEAR</p>
+                <p id="year-info" class="year-data"></p>
+           </div> 
+           <div class="agency">
+                <p>AGENCY</p>
+                <p id="agency-info">/p>
+           </div>
+           <div class="role">
+                <p>ROLE</p>
+                <p id="role-info"></p>
+           </div>
+           <div class="awards">
+                <p>AWARDS</p>
+                <p id="awards-info"></p>
+           </div>
+        </div>
+    </div>
+
+    <div class="cursor">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+            <g class="cursor"  id="top-left">
+                <path class="cursor" d="M4 0H0v4h1V1h3V0Z"/>
+            </g>
+            <g class="cursor" id="top-right">
+                <path d="M28 1V0h4v4h-1V1h-3Z"/>
+            </g>
+            <g class="cursor" id="bottom-right">
+                <path d="M28 31h3v-3h1v4h-4v-1Z"/>
+            </g>
+            <g class="cursor" id="bottom-left">
+                <path d="M1 28v3h3v1H0v-4h1Z"/>
+            </g>
+            <circle cx="16" cy="16" r="2" style="opacity:1;"></circle>
+        </svg>
+    </div>
+
+    <!-- unpkg -->
+    <script src="https://unpkg.com/@barba/core"></script>
+    <!-- jsdelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="TimeCodeAnimation.js"></script>
+    <script src="window.js"></script>
+    <script src="load.js"></script>
+    <script src="ProjectContainer.js"></script>
+    <script src="ThemesDOMRandomizer.js"></script>
+</body>
+</html>

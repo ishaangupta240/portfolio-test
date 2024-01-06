@@ -1,0 +1,474 @@
+@font-face {
+    font-family: Favorit-Mono;
+    src: url(assets/fonts/Favorit-Mono.woff2);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+@font-face {
+    font-family: Neue Haas;
+    src: url(assets/fonts/NHaasGroteskTXPro-55Rg.woff2);
+}
+
+@font-face {
+    font-family: Monorama;
+    src: url(assets/fonts/Monorama-Regular.woff2);
+}
+
+html.dark-theme{
+    --primary:#101010;
+    --secondary:#797872;
+    --third:#cdc9b9;
+    --coloraccent:#cdc9b9;
+}
+html.grey-theme{
+    --primary:#2a2c29;
+    --secondary:#a7a597;
+    --third:#5d6c6a;
+    --coloraccent:#5d6c6a;
+}
+html.lime-green-theme{
+    --primary:#dddddd;
+    --secondary:#3f3f3f;
+    --third:#c4ff58;
+    --coloraccent:#3f3f3f;
+}
+html.khaki-theme{
+    --primary:#e3e4d5;
+    --secondary:#474741;
+    --third:#a6a77e;
+    --coloraccent:#a6a77e;
+}
+html.red-theme{
+    --primary:#5c6057;
+    --secondary:#272925;
+    --third:#fe5344;
+    --coloraccent:#fe5344;
+}
+html.grey-white-theme{
+    --primary:#3c4236;
+    --secondary:#8d9784;
+    --third:#bcc89c;
+    --coloraccent:#bcc89c;
+}
+html.light-theme{
+    --primary:#999d9c;
+    --secondary:#797872;
+    --third:#cdc9b9;
+    --coloraccent:#cdc9b9;
+}
+html.pastel-red-theme{
+    --primary:#c5cfba;
+    --secondary:#6d7567;
+    --third:#f16d50;
+    --coloraccent:#f16d50;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Monorama;
+    background: var(--primary);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+p{
+    line-height: 1;
+    color: var(--secondary);
+}
+
+::selection{
+    color: var(--primary);
+    background-color: var(--coloraccent);
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 3.9464882943144%;
+    padding-left: 3.9464882943144%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.logo h1{
+    color: var(--coloraccent);
+    font-size: 80px;
+}
+
+.nav-buttons{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.button{
+    position: relative;
+    background: none;
+    outline: none;
+    border: 1px solid var(--secondary);
+    border-radius: 0.30em;
+    font-size: calc(11.43396px + .15094vw);
+    color: var(--secondary);
+    font-family: Favorit-Mono;
+    padding: 0.2em 0.8em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.button:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--secondary);
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.button:hover{
+    color: var(--primary);
+}
+
+.button:hover::after{
+    width: 100%;
+}
+
+.sub-nav{
+    position: relative;
+    width: 100%;
+    font-size: calc(8.86792px + .30189vw);
+    line-height: 1.5;
+    left: 20vw;
+    padding-top: 1em;
+    font-family: Favorit-Mono;
+    color: var(--secondary);
+}
+
+.intro{
+    line-height: 1.5;
+}
+
+.sub-nav p{
+    font-size: calc(8.86792px + .30189vw);
+}
+
+.sub-nav p:nth-child(1){
+    width: 20%;
+}
+
+p.primary{
+    font-size: calc(25.20755px + 1.81132vw);;
+    text-align: right;
+    color: var(--third);
+}
+
+.folio{
+    position: fixed;
+    right: 3.9464882943144%;
+    top: 21.13538874%;
+}
+
+/*Bottom Info*/
+.footer{
+    position: absolute;
+    top: 75%;
+    right: 11.5%;
+    width: 50%;
+    display: flex;
+    font-family: Favorit-Mono;
+}
+
+.year-data{
+    font-family: Monorama;
+    font-size: calc(8.90566px + 1.35849vw);
+}
+
+footer > div {
+    flex: 1;
+}
+
+.slide-info{
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 5em;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-kerning: none;
+    text-transform: uppercase;
+}
+/*-------------*/
+
+/*TimeCode Info*/
+.slide-copy{
+    left: 8.1605351170569vw;
+    position: fixed;
+    bottom: 18.364611260054vh;
+    width: 34%;
+    line-height: 0.9;
+}
+
+.slide-index{
+    font-size: calc(6.33962px + 1.50943vw);
+    font-weight: 400;
+    color: var(--coloraccent);
+}
+
+.project-counter{
+    color: var(--coloraccent);
+}
+
+.visit-btn-class{
+    position: relative;
+    background: none;
+    outline: none;
+    border: 1px solid var(--coloraccent);
+    border-radius: 0.25rem;
+    font-size: calc(9.73585px + .60377vw);
+    color: var(--coloraccent);
+    font-family: Favorit-Mono;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+    line-height: 0.9;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    font-weight: 400;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.visit-btn-class:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--coloraccent);
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.visit-btn-class:hover{
+    color: var(--primary);
+}
+
+.visit-btn-class:hover::after{
+    width: 100%;
+}
+
+.icon{
+    grid-area: i;
+}
+
+.arrow{
+    position: relative;
+    width: 0.5em;
+    color: var(--coloraccent);
+}
+
+.slide-info > div{
+    flex: 1;
+}
+
+.slide-name{
+    font-size: calc(16.07547px + 2.11321vw);
+    margin: .45em 0 1em;
+}
+
+.slide-name h2{
+    font-size: inherit;
+    color: var(--coloraccent);
+    font-family: Neue Haas;
+    font-weight: 400;
+}
+/*---------------*/
+
+.year p:nth-child(1),
+.role p:nth-child(1),
+.agency p:nth-child(1),
+.awards p:nth-child(1){
+    margin-bottom: 2em;
+}
+
+/*Canvas*/
+.hero-img{
+    position: absolute;
+    right: 3.9464882943144%;
+    top: 37.68538874%;
+    width: 51vw;
+    height: 28.95vh;
+}
+
+.mask{
+    position: absolute;
+    width: 51vw;
+    height: 28.95vh;
+    background: url(assets/images/image.avif);
+    background-size: cover;
+}
+
+.mask:nth-child(1){
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+.mask:nth-child(2) {
+    clip-path: polygon(5% 0, 5% 0, 5% 100%, 5% 100%);
+}
+
+.mask:nth-child(3) {
+    clip-path: polygon(10% 0%, 10% 0%, 10% 100%, 10% 100%);
+}
+
+.mask:nth-child(4) {
+    clip-path: polygon(15% 0%, 15% 0%, 15% 100%, 15% 100%);
+}
+    
+.mask:nth-child(5) {
+    clip-path: polygon(20% 0%, 20% 0%, 20% 100%, 20% 100%);
+}
+
+.mask:nth-child(6) {
+    clip-path: polygon(25% 0%, 25% 0%, 25% 100%, 25% 100%);
+}
+    
+.mask:nth-child(7) {
+    clip-path: polygon(30% 0%, 30% 0%, 30% 100%, 30% 100%);
+}
+
+.mask:nth-child(8) {
+    clip-path: polygon(35% 0%, 35% 0%, 35% 100%, 35% 100%);
+}
+
+.mask:nth-child(9) {
+    clip-path: polygon(40% 0%, 40% 0%, 40% 100%, 40% 100%);
+}
+
+.mask:nth-child(10) {
+    clip-path: polygon(45% 0%, 45% 0%, 45% 100%, 45% 100%);
+}
+
+.mask:nth-child(11) {
+    clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+}
+
+.mask:nth-child(12) {
+    clip-path: polygon(55% 0%, 55% 0%, 55% 100%, 55% 100%);
+}
+
+.mask:nth-child(13) {
+    clip-path: polygon(60% 0%, 60% 0%, 60% 100%, 60% 100%);
+}
+
+.mask:nth-child(14) {
+    clip-path: polygon(65% 0%, 65% 0%, 65% 100%, 65% 100%);
+}
+
+.mask:nth-child(15) {
+    clip-path: polygon(70% 0%, 70% 0%, 70% 100%, 70% 100%);
+}
+
+.mask:nth-child(16) {
+    clip-path: polygon(75% 0%, 75% 0%, 75% 100%, 75% 100%);
+}
+
+.mask:nth-child(17) {
+    clip-path: polygon(80% 0%, 80% 0%, 80% 100%, 80% 100%);
+}
+
+.mask:nth-child(18) {
+    clip-path: polygon(85% 0%, 85% 0%, 85% 100%, 85% 100%);
+}
+
+.mask:nth-child(19) {
+    clip-path: polygon(90% 0%, 90% 0%, 90% 100%, 90% 100%);
+}
+
+.mask:nth-child(20) {
+    clip-path: polygon(95% 0%, 95% 0%, 95% 100%, 95% 100%);
+}
+
+.cursor{
+    color: var(--third);
+    mix-blend-mode: difference;
+}
+
+
+/*Counter and Loader*/
+.loader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--third);
+    color: var(--secondary);
+    z-index: 10000;
+}
+
+.counter{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 6vh;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    font-family: Monorama;
+}
+/*-------------------*/
+
+
+/*Mobile Adjustments*/
+/*@media (max-width: 1022px) {
+    .logo h1 {
+        font-size: 24px;
+    }
+
+
+    .sub-nav {
+        right: 0;
+        width: 100%;
+    }
+
+    p.intro {
+        display: none;
+        font-size: calc(8.86792px + .30189vw);
+    }
+
+    .slide-name p {
+        font-size: calc(25.20755px + 1.81132vw);
+    }
+
+    .awards,
+    .agency{
+        display: none;
+    }
+}*/
