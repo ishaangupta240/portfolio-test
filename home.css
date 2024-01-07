@@ -418,10 +418,32 @@ footer > div {
 }
 
 .cursor{
-    color: var(--third);
+    fill: var(--third);
     mix-blend-mode: difference;
+    width: 2rem;
+    height: 2rem;
+    z-index: 50;
+    pointer-events: none;
+    overflow: visible;
+    position: fixed;
+    transition: all 0.3s;
 }
 
+.top-right{
+    opacity: 1;
+}
+
+.top-left{
+    opacity: 1;
+}
+
+.bottom-right{
+    opacity: 1;
+}
+
+.bottom-left{
+    opacity: 1;
+}
 
 /*Counter and Loader*/
 .loader{

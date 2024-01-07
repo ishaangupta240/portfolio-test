@@ -116,21 +116,21 @@
         </div>
     </div>
 
-    <div class="cursor">
+    <div class="cursor" data-cursor="" id="cursor-id">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-            <g class="cursor"  id="top-left">
-                <path class="cursor" d="M4 0H0v4h1V1h3V0Z"/>
+            <g class="cursor"  id="top-left" data-top-left="">
+                <path d="M4 0H0v4h1V1h3V0Z"/>
             </g>
-            <g class="cursor" id="top-right">
+            <g class="cursor" id="top-right" data-top-right="">
                 <path d="M28 1V0h4v4h-1V1h-3Z"/>
             </g>
-            <g class="cursor" id="bottom-right">
+            <g class="cursor" id="bottom-right" data-bottom-right="">
                 <path d="M28 31h3v-3h1v4h-4v-1Z"/>
             </g>
-            <g class="cursor" id="bottom-left">
+            <g class="cursor" id="bottom-left" data-bottom-left="">
                 <path d="M1 28v3h3v1H0v-4h1Z"/>
             </g>
-            <circle cx="16" cy="16" r="2" style="opacity:1;"></circle>
+            <circle cx="16" cy="16" r="2" style="opacity:1;" class="cursor" data-centre-dot=""></circle>
         </svg>
     </div>
 
@@ -140,9 +140,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
     <script src="TimeCodeAnimation.js"></script>
-    <script src="window.js"></script>
-    <script src="load.js"></script>
+    <script src="ViewportElementChanger.js"></script>
+    <script src="DOMContentLoader.js"></script>
     <script src="ProjectContainer.js"></script>
     <script src="ThemesDOMRandomizer.js"></script>
+    <script src="CursorPath.js"></script>
 </body>
 </html>
