@@ -419,6 +419,7 @@ footer > div {
     clip-path: polygon(95% 0%, 95% 0%, 95% 100%, 95% 100%);
 }
 
+
 .cursor{
     fill: var(--third);
     mix-blend-mode: difference;
