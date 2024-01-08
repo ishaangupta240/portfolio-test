@@ -17,8 +17,8 @@ const move = (e) => {
     var y = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
   } catch (e) {}
   //set left and top of div based on mouse position
-  myDiv.style.left = x + "px";
-  myDiv.style.top = y + "px";
+  myDiv.style.left = x - 15 + "px";
+  myDiv.style.top = y - 17+ "px";
 };
 //For mouse
 document.addEventListener("mousemove", (e) => {

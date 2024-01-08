@@ -19,6 +19,7 @@ const values = [
   const awardsIndex = document.getElementById("awards-info");
   const agencyIndex = document.getElementById("agency-info");
   const projectCounter = document.getElementById("project-counter-id");
+  const maskClass = document.getElementById("canvas");
   
   if (currentIndex===0){
     ProjectDataValue.innerHTML = "BLEND DESIGN";
@@ -29,6 +30,7 @@ const values = [
     awardsIndex.innerHTML = "SECOND";
     agencyIndex.innerHTML = "CODE WEEK BY APEEJAY SCHOOL NOIDA";
     projectCounter.innerHTML = "P /01";
+    maskClass.style.background = "url(assets/images/image.avif);";
   }
   
   
@@ -47,7 +49,7 @@ const values = [
     awardsIndex.innerHTML = "SECOND";
     agencyIndex.innerHTML = "CODE WEEK BY APEEJAY SCHOOL NOIDA";
     projectCounter.innerHTML = "P /01";
-    animateMasks(".hero-img .mask");
+    maskClass.style.background = "url(assets/images/image.avif);";
   }
   
   if (currentIndex===1){
@@ -59,6 +61,7 @@ const values = [
     awardsIndex.innerHTML = "HONORABLE MENTION";
     agencyIndex.innerHTML = "WARTEX #9.0";
     projectCounter.innerHTML = "P /02";
+    maskClass.style.background = "url(assets/images/image2.webp);";
   }
   
   if (currentIndex===2){

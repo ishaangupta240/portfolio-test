@@ -1,0 +1,89 @@
+.maskP1{
+    position: absolute;
+    width: 51vw;
+    height: 28.95vh;
+    background: url(assets/images/image2.webp);
+    background-size: cover;
+    z-index: -2;
+
+}
+
+.maskP1:nth-child(1){
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+.maskP1:nth-child(2) {
+    clip-path: polygon(5% 0, 5% 0, 5% 100%, 5% 100%);
+}
+
+.maskP1:nth-child(3) {
+    clip-path: polygon(10% 0%, 10% 0%, 10% 100%, 10% 100%);
+}
+
+.maskP1:nth-child(4) {
+    clip-path: polygon(15% 0%, 15% 0%, 15% 100%, 15% 100%);
+}
+    
+.maskP1:nth-child(5) {
+    clip-path: polygon(20% 0%, 20% 0%, 20% 100%, 20% 100%);
+}
+
+.maskP1:nth-child(6) {
+    clip-path: polygon(25% 0%, 25% 0%, 25% 100%, 25% 100%);
+}
+    
+.maskP1:nth-child(7) {
+    clip-path: polygon(30% 0%, 30% 0%, 30% 100%, 30% 100%);
+}
+
+.maskP1:nth-child(8) {
+    clip-path: polygon(35% 0%, 35% 0%, 35% 100%, 35% 100%);
+}
+
+.maskP1:nth-child(9) {
+    clip-path: polygon(40% 0%, 40% 0%, 40% 100%, 40% 100%);
+}
+
+.maskP1:nth-child(10) {
+    clip-path: polygon(45% 0%, 45% 0%, 45% 100%, 45% 100%);
+}
+
+.maskP1:nth-child(11) {
+    clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+}
+
+.maskP1:nth-child(12) {
+    clip-path: polygon(55% 0%, 55% 0%, 55% 100%, 55% 100%);
+}
+
+.maskP1:nth-child(13) {
+    clip-path: polygon(60% 0%, 60% 0%, 60% 100%, 60% 100%);
+}
+
+.maskP1:nth-child(14) {
+    clip-path: polygon(65% 0%, 65% 0%, 65% 100%, 65% 100%);
+}
+
+.maskP1:nth-child(15) {
+    clip-path: polygon(70% 0%, 70% 0%, 70% 100%, 70% 100%);
+}
+
+.maskP1:nth-child(16) {
+    clip-path: polygon(75% 0%, 75% 0%, 75% 100%, 75% 100%);
+}
+
+.maskP1:nth-child(17) {
+    clip-path: polygon(80% 0%, 80% 0%, 80% 100%, 80% 100%);
+}
+
+.maskP1:nth-child(18) {
+    clip-path: polygon(85% 0%, 85% 0%, 85% 100%, 85% 100%);
+}
+
+.maskP1:nth-child(19) {
+    clip-path: polygon(90% 0%, 90% 0%, 90% 100%, 90% 100%);
+}
+
+.maskP1:nth-child(20) {
+    clip-path: polygon(95% 0%, 95% 0%, 95% 100%, 95% 100%);
+}
