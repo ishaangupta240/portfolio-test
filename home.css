@@ -107,9 +107,16 @@ nav{
 
 }
 
-.logo h1{
-    color: var(--coloraccent);
-    font-size: 80px;
+.logo{
+    stroke:var(--coloraccent);
+    stroke-width:0.25mm;
+    fill:var(--coloraccent);
+}
+
+.logo-name-svg{
+    stroke:var(--coloraccent);
+    stroke-width:0.20mm;
+    fill:var(--coloraccent);
 }
 
 .nav-buttons{
@@ -324,11 +331,12 @@ footer > div {
 
 /*Canvas*/
 .hero-img{
-    position: absolute;
+    position: fixed;
     right: 3.9464882943144%;
     top: 37.68538874%;
     width: 51vw;
     height: 28.95vh;
+    display: flex;
 }
 
 .mask{
@@ -419,7 +427,30 @@ footer > div {
     clip-path: polygon(95% 0%, 95% 0%, 95% 100%, 95% 100%);
 }
 
+.project-img2{
+    width: 51vw;
+    height: 28.95vh;
+}
 
+.project-img3{
+    width: 51vw;
+    height: 28.95vh;
+}
+
+.project-img4{
+    width: 51vw;
+    height: 28.95vh;
+}
+
+.project-img5{
+    width: 51vw;
+    height: 28.95vh;
+}
+
+.project-img6{
+    width: 51vw;
+    height: 28.95vh;
+}
 .cursor{
     fill: var(--third);
     mix-blend-mode: difference;
