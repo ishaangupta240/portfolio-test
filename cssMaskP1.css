@@ -34,3 +34,11 @@
     background: url(assets/images/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg);
     background-size: cover;    
 }
+
+.maskP5{
+    position: absolute;
+    width: 51vw;
+    height: 28.95vh;
+    background: url(assets/images/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg);
+    background-size: cover;    
+}

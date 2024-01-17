@@ -1,10 +1,59 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <title>Swipe and Key Press</title>
 </head>
 <body>
-  
+    <script>
+        // Common function to be called for both swipe and key events
+        function onUserAction(action) {
+            console.log("User Action: " + action);
+        }
+
+        // Event listener for touch events
+        let startTouchY;
+
+        document.addEventListener('touchstart', function (e) {
+            startTouchY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', function (e) {
+            const endTouchY = e.changedTouches[0].clientY;
+            const swipeDistance = endTouchY - startTouchY;
+
+            // Define a threshold for considering it a swipe
+            const swipeThreshold = 50;
+
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0) {
+                    onUserAction('Swipe Down');
+                } else {
+                    onUserAction('Swipe Up');
+                }
+            }
+        });
+
+        // Event listener for key presses
+        document.addEventListener('keydown', function (e) {
+            const keyCode = e.keyCode;
+            if (keyCode === 37) {
+                onUserAction('Swipe Left');
+            } else if (keyCode === 38) {
+                onUserAction('Swipe Up');
+            } else if (keyCode === 39) {
+                onUserAction('Swipe Right');
+            } else {
+                onUserAction('Key Press: ' + keyCode);
+            }
+        });
+    </script>
 </body>
 </html>
