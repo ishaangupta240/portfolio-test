@@ -30,6 +30,8 @@ const values = [
     projectCounter.innerHTML = "P /01";
   }
   
+
+  
   
   const paragraph = document.getElementById('project-id');
   
