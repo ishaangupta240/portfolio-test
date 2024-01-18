@@ -33,7 +33,10 @@ const values = [
   
   const paragraph = document.getElementById('project-id');
   
+  let isAnimating = false;
+
   function updateParagraph() {
+    if(!isAnimating){
     currentIndex = (currentIndex + 1) % values.length;
     const projectDataValue = document.getElementById("project-id");
   
@@ -116,9 +119,11 @@ const values = [
     animateMasksOut5(".project-a-tag .hero-img .maskP4");
     }
   }
+  }
 
 
   function animateMasksOut(masksPath) {
+    isAnimating = true;
     const masks = document.querySelectorAll(masksPath);
     const clipPathValues = [
       "polygon(5% 0%, 5% 0%, 5% 100%, 5% 100%)",
@@ -201,6 +206,9 @@ const values = [
           stagger: 0.2,
           force3D: true,
           ease: "back.out(1.7)",
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
       });
     } else {
@@ -226,6 +234,7 @@ const values = [
 
 
   function animateMasksOut2(masksPath) {
+    isAnimating = true;
     const masks = document.querySelectorAll(masksPath);
     const clipPathValues = [
     "polygon(5% 0%, 5% 0%, 5% 100%, 5% 100%)",
@@ -308,6 +317,9 @@ const values = [
           stagger: 0.2,
           force3D: true,
           ease: "back.out(1.7)",
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
       });
     } else {
@@ -333,6 +345,7 @@ const values = [
 
 
   function animateMasksOut3(masksPath) {
+    isAnimating = true;
     const masks = document.querySelectorAll(masksPath);
     const clipPathValues = [
     "polygon(5% 0%, 5% 0%, 5% 100%, 5% 100%)",
@@ -415,6 +428,9 @@ const values = [
           stagger: 0.2,
           force3D: true,
           ease: "back.out(1.7)",
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
       });
     } else {
@@ -447,6 +463,7 @@ const values = [
 
 
   function animateMasksOut4(masksPath) {
+    isAnimating = true;
     const masks = document.querySelectorAll(masksPath);
     const clipPathValues = [
     "polygon(5% 0%, 5% 0%, 5% 100%, 5% 100%)",
@@ -529,6 +546,9 @@ const values = [
           stagger: 0.2,
           force3D: true,
           ease: "back.out(1.7)",
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
       });
     } else {
@@ -550,6 +570,7 @@ const values = [
 
 
   function animateMasksOut5(masksPath) {
+    isAnimating = true;
     const masks = document.querySelectorAll(masksPath);
     const clipPathValues = [
     "polygon(5% 0%, 5% 0%, 5% 100%, 5% 100%)",
@@ -632,6 +653,9 @@ const values = [
           stagger: 0.2,
           force3D: true,
           ease: "back.out(1.7)",
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
       });
     } else {
@@ -652,6 +676,7 @@ const values = [
 
 
   function animateMasksOut6(masksPath) {
+    isAnimating = true;
     const masks = document.querySelectorAll(masksPath);
     const clipPathValues = [
     "polygon(5% 0%, 5% 0%, 5% 100%, 5% 100%)",
@@ -734,6 +759,9 @@ const values = [
           stagger: 0.2,
           force3D: true,
           ease: "back.out(1.7)",
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
       });
     } else {
@@ -803,3 +831,6 @@ const values = [
       updateParagraph();
     }
   }
+
+//Disable and enable keys and swipes during animation
+

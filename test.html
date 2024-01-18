@@ -1,59 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-    </style>
-    <title>Swipe and Key Press</title>
-</head>
-<body>
-    <script>
-        // Common function to be called for both swipe and key events
-        function onUserAction(action) {
-            console.log("User Action: " + action);
-        }
+function disableArrowKeys() {
+    document.addEventListener("keydown", preventArrowKeyDefault);
+}
 
-        // Event listener for touch events
-        let startTouchY;
+function enableArrowKeys() {
+    document.removeEventListener("keydown", preventArrowKeyDefault);
+}
 
-        document.addEventListener('touchstart', function (e) {
-            startTouchY = e.touches[0].clientY;
-        });
+function preventArrowKeyDefault(event) {
+    const arrowKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+    if (arrowKeys.includes(event.key)) {
+        event.preventDefault();
+    }
+}
 
-        document.addEventListener('touchend', function (e) {
-            const endTouchY = e.changedTouches[0].clientY;
-            const swipeDistance = endTouchY - startTouchY;
+function disableSwipe() {
+    document.addEventListener("touchmove", preventSwipeDefault, { passive: false });
+}
 
-            // Define a threshold for considering it a swipe
-            const swipeThreshold = 50;
+function enableSwipe() {
+    document.removeEventListener("touchmove", preventSwipeDefault);
+}
 
-            if (Math.abs(swipeDistance) > swipeThreshold) {
-                if (swipeDistance > 0) {
-                    onUserAction('Swipe Down');
-                } else {
-                    onUserAction('Swipe Up');
+function preventSwipeDefault(event) {
+    event.preventDefault();
+}
+
+function animateMasksOut(masksPath) {
+    // ... your existing code
+
+    if (masks.length > 0) {
+        // Disable arrow keys and swipes before animation
+        disableArrowKeys();
+        disableSwipe();
+
+        masks.forEach((mask, index) => {
+            gsap.to(mask, {
+                // ... your existing animation code
+
+                onComplete: () => {
+                    // ... your existing completion code
+
+                    if (index === masks.length - 1) {
+                        // Enable arrow keys and swipes after animation
+                        enableArrowKeys();
+                        enableSwipe();
+
+                        setTimeout(() => {
+                            animateMasksIn(".project-a-tag .hero-img .maskP1");
+                        }, 0);
+                    }
                 }
-            }
+            });
         });
+    } else {
+        console.error("No masks found or masksArray1 is not iterable.");
+    }
+}
 
-        // Event listener for key presses
-        document.addEventListener('keydown', function (e) {
-            const keyCode = e.keyCode;
-            if (keyCode === 37) {
-                onUserAction('Swipe Left');
-            } else if (keyCode === 38) {
-                onUserAction('Swipe Up');
-            } else if (keyCode === 39) {
-                onUserAction('Swipe Right');
-            } else {
-                onUserAction('Key Press: ' + keyCode);
-            }
-        });
-    </script>
-</body>
-</html>
+// Similar modifications for animateMasksOut2, animateMasksIn2
