@@ -1,0 +1,156 @@
+@font-face {
+    font-family: Favorit-Mono;
+    src: url(assets/fonts/Favorit-Mono.woff2);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+@font-face {
+    font-family: Neue Haas;
+    src: url(assets/fonts/NHaasGroteskTXPro-55Rg.woff2);
+}
+
+@font-face {
+    font-family: Monorama;
+    src: url(assets/fonts/Monorama-Regular.woff2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Monorama;
+    background: var(--primary);
+    transition-duration: 0.3s;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+p{
+    line-height: 1;
+    color: var(--secondary);
+}
+
+::selection{
+    color: var(--primary);
+    background-color: var(--coloraccent);
+}
+
+.sub-nav{
+    position: relative;
+    width: 100%;
+    font-size: calc(8.86792px + .30189vw);
+    line-height: 1.5;
+    left: 20vw;
+    padding-top: 1em;
+    font-family: Favorit-Mono;
+    color: var(--secondary);
+}
+
+.intro{
+    line-height: 1.5;
+}
+
+.sub-nav p{
+    font-size: calc(8.86792px + .30189vw);
+}
+
+.sub-nav p:nth-child(1){
+    width: 20%;
+}
+
+p.primary{
+    font-size: calc(25.20755px + 1.81132vw);;
+    text-align: right;
+    color: var(--third);
+}
+
+.folio{
+    position: fixed;
+    right: 3.9464882943144%;
+    top: 21.13538874%;
+}
+
+.cursor{
+    fill: var(--third);
+    mix-blend-mode: difference;
+    width: 2rem;
+    height: 2rem;
+    z-index: 50;
+    pointer-events: none;
+    overflow: visible;
+    position: fixed;
+    transition: all 0.6s cubic-bezier(.24,1.08,1,.99);
+}
+
+.top-right{
+    opacity: 1;
+}
+
+.top-left{
+    opacity: 1;
+}
+
+.bottom-right{
+    opacity: 1;
+}
+
+.bottom-left{
+    opacity: 1;
+}
+
+/*Counter and Loader*/
+.loader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--third);
+    color: var(--secondary);
+    z-index: 10000;
+}
+
+.counter{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 6vh;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    font-family: Monorama;
+}
+/*-------------------*/
+
+/*-------------------*/
+/*Mobile Adjustments*/
+/*@media (max-width: 1022px) {
+    .logo h1 {
+        font-size: 24px;
+    }
+
+
+    .sub-nav {
+        right: 0;
+        width: 100%;
+    }
+
+    p.intro {
+        display: none;
+        font-size: calc(8.86792px + .30189vw);
+    }
+
+    .slide-name p {
+        font-size: calc(25.20755px + 1.81132vw);
+    }
+
+    .awards,
+    .agency{
+        display: none;
+    }
+}*/

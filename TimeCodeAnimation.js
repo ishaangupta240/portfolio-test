@@ -118,3 +118,62 @@ document.getElementById("project-id").onmouseover = event => {
     iteration += 0.75;
   }, 30);
 }
+
+const projectNameLetterPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let projectNameAnimationTimer = null;
+
+document.getElementById("prev").onmouseover = projectNameEvent => {  
+  let projectNameIteration = 0;
+  
+  clearInterval(projectNameAnimationTimer);
+  
+  projectNameAnimationTimer = setInterval(() => {
+    projectNameEvent.target.innerText = projectNameEvent.target.innerText
+      .split("")
+      .map((projectNameLetter, index) => {
+        if(index < projectNameIteration) {
+          return projectNameEvent.target.dataset.value[index];
+        }
+      
+        return projectNameLetterPool[Math.floor(Math.random() * 26)];
+      })
+      .join("");
+    
+    if(projectNameIteration >= projectNameEvent.target.dataset.value.length){ 
+      clearInterval(projectNameAnimationTimer);
+    }
+    
+    projectNameIteration += 0.38;
+  }, 30);
+}
+
+// Updated Project Name Randomizer
+const projectTitleLetterPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let projectTitleAnimationTimer = null;
+
+document.getElementById("next").onmouseover = projectTitleEvent => {  
+  let projectTitleIteration = 0;
+  
+  clearInterval(projectTitleAnimationTimer);
+  
+  projectTitleAnimationTimer = setInterval(() => {
+    projectTitleEvent.target.innerText = projectTitleEvent.target.innerText
+      .split("")
+      .map((projectTitleLetter, index) => {
+        if(index < projectTitleIteration) {
+          return projectTitleEvent.target.dataset.value[index];
+        }
+      
+        return projectTitleLetterPool[Math.floor(Math.random() * 26)];
+      })
+      .join("");
+    
+    if(projectTitleIteration >= projectTitleEvent.target.dataset.value.length){ 
+      clearInterval(projectTitleAnimationTimer);
+    }
+    
+    projectTitleIteration += 0.38;
+  }, 30);
+}

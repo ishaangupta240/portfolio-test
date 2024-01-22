@@ -1,0 +1,52 @@
+@font-face {
+    font-family: Favorit-Mono;
+    src: url(assets/fonts/Favorit-Mono.woff2);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+@font-face {
+    font-family: Neue Haas;
+    src: url(assets/fonts/NHaasGroteskTXPro-55Rg.woff2);
+}
+
+@font-face {
+    font-family: Monorama;
+    src: url(assets/fonts/Monorama-Regular.woff2);
+}
+
+.footer{
+    position: absolute;
+    top: 75%;
+    right: 11.5%;
+    width: 50%;
+    display: flex;
+    font-family: Favorit-Mono;
+}
+
+.year-data{
+    font-family: Monorama;
+    font-size: calc(8.90566px + 1.35849vw);
+}
+
+footer > div {
+    flex: 1;
+}
+
+.slide-info{
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 5em;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-kerning: none;
+    text-transform: uppercase;
+}
+.year p:nth-child(1),
+.role p:nth-child(1),
+.agency p:nth-child(1),
+.awards p:nth-child(1){
+    margin-bottom: 2em;
+}
