@@ -14,7 +14,7 @@
     font-family: Monorama;
     src: url(assets/fonts/Monorama-Regular.woff2);
 }
-
+@media screen and (min-width: 1373px) {
 .footer{
     position: absolute;
     top: 75%;
@@ -49,4 +49,51 @@ footer > div {
 .agency p:nth-child(1),
 .awards p:nth-child(1){
     margin-bottom: 2em;
+}
+}
+
+@media screen and (max-width: 1373px) {
+    .footer{
+        position: absolute;
+        top: 67.4753601vh;
+        right: 11.5%;
+        width: 50%;
+        display: flex;
+        font-family: Favorit-Mono;
+    }
+    
+    .year-data{
+        font-family: Monorama;
+        font-size: calc(8.90566px + 1.35849vw);
+    }
+    
+    footer > div {
+        flex: 1;
+    }
+    
+    .slide-info{
+        width: auto;
+        display: flex;
+        align-items: flex-start;
+        gap: 10em;
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        font-kerning: none;
+        text-transform: uppercase;
+    }
+    .year p:nth-child(1),
+    .role p:nth-child(1),
+    .agency p:nth-child(1),
+    .awards p:nth-child(1){
+        margin-bottom: 2em;
+    }
+
+    .role{
+        display: none;
+    }
+
+    .agency{
+        display: none;
+    }
 }

@@ -15,6 +15,7 @@
     src: url(assets/fonts/Monorama-Regular.woff2);
 }
 
+@media screen and (min-width: 1373px) {
 .page-bar{
     position: fixed;
     left: 6.1605351170569vw;
@@ -164,3 +165,156 @@
     font-family: Neue Haas;
     font-weight: 400;
 }
+}
+
+@media screen and (max-width: 1373px) {
+    .page-bar{
+        position: fixed;
+        left: 2.54117647vw;
+        top: 56.4821835vh;
+        display: inline-flex;
+        transition-duration: 0.3s;
+        transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+    
+    }
+    
+    .outerbar{
+        background-color: var(--primary);
+        /*width: 18.0602007vw;*/
+        width: 81.3666667vw;
+        height: 0.25rem;
+        align-self: center;
+        transition-duration: 0.3s;
+        transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+    
+    .innerbar{
+        background-color: var(--coloraccent);
+        height: 0.25rem;
+        width: 16.66666667%;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .prev{
+        background-color: var(--primary);
+        border: none;
+        color: var(--coloraccent);
+        font-family: Favorit-Mono;
+        font-size: 0.75rem;
+        letter-spacing: 0.03em;
+        font-weight: 400;
+        margin-right: 40px;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+    
+    .next{
+        background-color: var(--primary);
+        border: none;
+        color: var(--coloraccent);
+        font-family: Favorit-Mono;
+        font-size: 0.75rem;
+        letter-spacing: 0.03em;
+        font-weight: 400;
+        margin-left: 40px;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+    
+    
+    .slide-copy{
+        left: 2.54117647vw;
+        position: fixed;
+        top: 59.893859vh;
+        width: 34%;
+        line-height: 0.9;
+    }
+    
+    .slide-index{
+        font-size: calc(6.33962px + 1.50943vw);
+        font-weight: 400;
+        color: var(--coloraccent);
+    }
+    
+    .project-counter{
+        color: var(--coloraccent);
+    }
+    
+    .visit-btn-class{
+        position: relative;
+        background: none;
+        outline: none;
+        border: 1px solid var(--secondary);
+        border-radius: 0.25rem;
+        font-size: calc(9.73585px + .60377vw);
+        color: var(--secondary);
+        font-family: Favorit-Mono;
+        padding-bottom: 0.25rem;
+        padding-top: 0.25rem;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.3s;
+        z-index: 100;
+        line-height: 0.9;
+        letter-spacing: .03em;
+        text-transform: uppercase;
+        font-weight: 400;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    }
+    
+    .visit-btn-class:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: var(--secondary);
+        z-index: -1;
+        transition: all 0.3s;
+    }
+    
+    .visit-btn-class:hover{
+        color: var(--primary);
+    }
+    
+    .visit-btn-class:hover::after{
+        width: 100%;
+    }
+    
+    .icon{
+        grid-area: i;
+    }
+    
+    .arrow{
+        position: relative;
+        width: 0.5em;
+        color: var(--coloraccent);
+    }
+    
+    .slide-info > div{
+        flex: 1;
+    }
+    
+    .slide-name{
+        font-size: calc(16.07547px + 2.11321vw);
+        margin: .45em 0 1em;
+    }
+    
+    .slide-name h2{
+        font-size: inherit;
+        color: var(--coloraccent);
+        font-family: Neue Haas;
+        font-weight: 400;
+    }
+    }

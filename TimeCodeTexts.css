@@ -15,11 +15,13 @@
     src: url(assets/fonts/Monorama-Regular.woff2);
 }
 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 html,body{
     width: 100vw;
@@ -44,29 +46,25 @@ p{
 
 .sub-nav{
     position: relative;
-    width: 100%;
+
+}
+
+@media screen and (min-width: 1373px) {
+
+.intro{
+    line-height: 1.5;
+    top: 17.69437vh;
+    position: fixed;
+    width: 20%;
     font-size: calc(8.86792px + .30189vw);
     line-height: 1.5;
     left: 20vw;
-    padding-top: 1em;
     font-family: Favorit-Mono;
     color: var(--secondary);
 }
 
-.intro{
-    line-height: 1.5;
-}
-
-.sub-nav p{
-    font-size: calc(8.86792px + .30189vw);
-}
-
-.sub-nav p:nth-child(1){
-    width: 20%;
-}
-
 p.primary{
-    font-size: calc(25.20755px + 1.81132vw);;
+    font-size: calc(25.20755px + 1.81132vw);
     text-align: right;
     color: var(--third);
 }
@@ -87,6 +85,8 @@ p.primary{
     overflow: visible;
     position: fixed;
     transition: all 0.6s cubic-bezier(.24,1.08,1,.99);
+}
+
 }
 
 .top-right{
@@ -125,32 +125,30 @@ p.primary{
     padding-right: 0.5em;
     font-family: Monorama;
 }
-/*-------------------*/
 
-/*-------------------*/
-/*Mobile Adjustments*/
-/*@media (max-width: 1022px) {
-    .logo h1 {
-        font-size: 24px;
-    }
+@media screen and (max-width: 1373px) {
 
-
-    .sub-nav {
-        right: 0;
-        width: 100%;
-    }
-
-    p.intro {
-        display: none;
+    .intro{
+        line-height: 1.5;
+        top: 7.58150114vh;
+        position: fixed;
+        width: 27%;
         font-size: calc(8.86792px + .30189vw);
+        line-height: 1.5;
+        left: 2.54117647vw;
+        font-family: Favorit-Mono;
+        color: var(--secondary);
     }
-
-    .slide-name p {
+    
+    p.primary{
         font-size: calc(25.20755px + 1.81132vw);
+        text-align: right;
+        color: var(--third);
     }
-
-    .awards,
-    .agency{
-        display: none;
+    
+    .folio{
+        position: fixed;
+        right: 2.54117647vw;
+        top: 14.9355572vh;
     }
-}*/
+}

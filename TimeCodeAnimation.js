@@ -5,29 +5,31 @@ const availableLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let animationInterval = null;
 
 document.getElementById("proj-btn").onmouseover = event => {  
- let animationIteration = 0;
+  let animationIteration = 0;
+  const targetElement = document.getElementById("project-text");
   
- clearInterval(animationInterval);
+  clearInterval(animationInterval);
   
- animationInterval = setInterval(() => {
-    event.target.innerText = event.target.innerText
+  animationInterval = setInterval(() => {
+    targetElement.innerText = targetElement.innerText
       .split("")
       .map((letter, index) => {
         if(index < animationIteration) {
-          return event.target.dataset.value[index];
+          return targetElement.dataset.value[index];
         }
       
-        return availableLetters[Math.floor(Math.random() * 26)]
+        return availableLetters[Math.floor(Math.random() * 26)];
       })
       .join("");
     
-    if(animationIteration >= event.target.dataset.value.length){ 
+    if(animationIteration >= targetElement.dataset.value.length){ 
       clearInterval(animationInterval);
     }
     
     animationIteration += 1;
- }, 30);
+  }, 30);
 }
+
 
 //Info Randomizer
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -36,28 +38,31 @@ let interval = null;
 
 document.getElementById("info-btn").onmouseover = event => {  
   let iteration = 0;
+  const targetElement = document.getElementById("info-text");
   
   clearInterval(interval);
   
   interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
+    targetElement.innerText = targetElement.dataset.value
       .split("")
       .map((letter, index) => {
         if(index < iteration) {
-          return event.target.dataset.value[index];
+          return targetElement.dataset.value[index];
         }
       
-        return letters[Math.floor(Math.random() * 26)]
+        return letters[Math.floor(Math.random() * 26)];
       })
       .join("");
     
-    if(iteration >= event.target.dataset.value.length){ 
+    if(iteration >= targetElement.dataset.value.length){ 
       clearInterval(interval);
     }
     
     iteration += 0.75;
   }, 30);
 }
+
+
 
 //Visit Randomizer
 const letterPool = "!@#$%&?";
