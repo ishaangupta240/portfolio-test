@@ -13,6 +13,7 @@ const logosvgDiv = document.getElementById("logo-div");
 const logoContainerSvgDiv = document.getElementById("logo-container");
 
 //Values to be changes from here
+function handleWidthChange(){
 if(Width <= 1023){
     logosvgDiv.style.width = "180.5px";
     logo.setAttribute("d","M 34.84 2.36 L 32.36 0.04 L 81.36 0.04 L 77.6 8.4 L 56.76 8.4 L 58.32 4.96 L 54.56 4.96 L 52.04 10.64 L 76.64 10.64 L 71.88 21.32 L 62.24 26.32 L 24.16 26.32 L 27.92 17.84 L 48.8 17.84 L 47.24 21.36 L 51 21.36 L 53.64 15.48 L 29 15.48 Q 31.8 9.16 34.84 2.36 Z M 135.28 2.36 L 132.8 0.04 L 175.12 0.04 L 180.36 4.84 L 170.8 26.32 L 149.24 26.32 L 158.76 4.96 L 155 4.96 L 145.48 26.32 L 124.6 26.32 L 135.28 2.36 Z M 85 2.4 L 82.52 0.08 L 124.12 0.08 L 129.4 4.88 L 119.92 26.32 L 98.96 26.32 L 101.8 19.92 L 98.04 19.92 L 95.2 26.32 L 74.44 26.32 L 85 2.4 Z M 19.44 26.32 L 0 26.32 L 10.68 2.32 L 8.2 0 L 31.16 0 L 19.44 26.32 Z M 108.44 5 L 104.72 5 L 100.72 14.04 L 104.44 14.04 L 108.44 5 Z");
@@ -31,3 +32,11 @@ if(Width > 1023){
     logoNameSvg.setAttribute("height","11.777");
     logoNameSvg.setAttribute("width","258.896");
 }
+}
+
+handleWidthChange();
+
+
+window.addEventListener('resize', handleWidthChange());
+
+

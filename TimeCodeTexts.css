@@ -82,17 +82,7 @@ p{
     font-family: Monorama;
 }
 
-.icon{
-    position: relative;
-    width: 0.5em;
-    vertical-align: middle;
-    justify-self: flex-end;
-    align-self: center;
-}
 
-.fill-current{
-    fill: var(--coloraccent);
-}
 
 @media screen and (min-width: 1024px) {
     .nav{
@@ -108,6 +98,18 @@ p{
         -ms-user-select: none;
         user-select: none;
     
+    }
+
+    .icon{
+        position: relative;
+        width: 0.5em;
+        vertical-align: middle;
+        justify-self: flex-end;
+        align-self: center;
+    }
+    
+    .fill-current{
+        fill: var(--coloraccent);
     }
     
     .btn3{
@@ -874,7 +876,40 @@ p{
         user-select: none;
         -webkit-user-select: none;
         -moz-user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
     }
+
+    .visit-btn-class:hover .fill-current{
+        transition: all .3s;
+        fill: var(--primary);
+     }
+
+     .icon{
+        position: relative;
+        width: 0.5em;
+        vertical-align: middle;
+        justify-self: flex-end;
+        align-self: center;
+    }
+    
+    .fill-current{
+        fill: var(--secondary);
+    }
+
+    .visit-btn-class:hover .fill-current{
+        transition: all .3s;
+        fill: var(--secondary);
+     }
+
+     .visit-btn-class::after .fill-current{
+        transition: all .3s;
+     }
+
+     .visit-btn-class::after .fill-current{
+        transition: all .3s;
+     }
     
     .visit-btn-class:after{
         content: "";
