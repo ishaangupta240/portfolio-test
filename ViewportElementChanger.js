@@ -38,5 +38,3 @@ handleWidthChange();
 
 
 window.addEventListener('resize', handleWidthChange());
-
-
