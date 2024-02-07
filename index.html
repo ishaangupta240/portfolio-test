@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="assets/images/social.png">
     <title>Ishaan Gupta / Student</title>
     <link rel="stylesheet" href="TimeCodeTexts.css">
     <link rel="stylesheet" href="ProjectContainerMasks.css">
     <link rel="stylesheet" href="FooterInfo.css">
     <link rel="stylesheet" href="NavBar.css">      
     <link rel="stylesheet" href="SlideInfo.css">   
-    <link rel="stylesheet" href="ThemeList.css">   
+    <link rel="stylesheet" href="ThemeList.css">  
+    <link rel="stylesheet" href="GridAreaDecalration.css">  
+    <link rel="preload" href="GridAreaDecalration.css" as="style">  
     <link rel="preload" href="assets/images/image.avif" as="image">
     <link rel="preload" href="ThemesDOMRandomizer.js" as="script">
     <link rel="preload" href="TimeCodeTexts.css" as="style">
     <link rel="preload" href="DOMContentLoader.js" as="script">
+    <link rel="preload" href="ViewportElementChanger.js" as="script">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
+    <div class="grid-area">
     <div class="loader">
         <div class="counter">
             0
@@ -24,9 +29,9 @@
     </div>
 
     <div class="nav">
-        <a href="index.html" style="text-decoration: none; margin-top: 8.44504021vh;">
-        <div class="logo-container">
-            <div class="logo">
+        <a href="index.html" id="logo-a">
+        <div class="logo-container" id="logo-container">
+            <div class="logo" id="logo-div">
                 <svg height="" xmlns="http://www.w3.org/2000/svg" id="logo-svg">
                     <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke-width="0.25mm" class="logo">
                         <path id="logo-path" d="" vector-effect="non-scaling-stroke"/>
@@ -73,7 +78,7 @@
         </div>
     </div>
 
-        <p class="intro">
+        <p class="intro" id="intro">
             ISHAAN GUPTA IS AN INDEPENDENT CREATIVE DEVELOPER AND VFX ARTIST FOCUSING ON 3D / INTERACTION / SMOOTH ANIMATIONS. BASED IN NOIDA (IN) / CURRENTLY A STUDENT IN HIGH SCHOOL.
         </p>
 
@@ -82,7 +87,8 @@
         <p class="primary">/2024</p>
     </div>
     
-    <a href="" id="project-link" draggable="false" class="project-a-tag">
+    <div class="navigation">
+    <a href="" id="project-link" draggable="false" class="project-a-tag" style="text-decoration: none;">
         <div class="hero-img">
                 <div class="mask" id="canvas1"></div>
                 <div class="mask" id="canvas2"></div>
@@ -107,47 +113,73 @@
         </div>
     </a>
 
+    
     <div class="page-bar">
+        <div class="bar">
         <button class="prev" id="prev" data-value="PREV" onclick="decreaseIndex();">PREV</button>
         <div class="outerbar">
             <div class="innerbar" id="progress"></div>
         </div>
         <button class="next" id="next" data-value="NEXT" onclick="updateParagraph();">NEXT</button>
+        </div>
     </div>
 
     <div class="slide-copy">
         <div class="slide-index">
             <p id="project-counter-id" class="project-counter"></p>
         </div>
-
-        <div class="slide-name">
-            <h2 id="project-id" data-value=""></h2>
-        </div>
-
-        <button data-value="VISIT" id="visit-btn" onclick= "updateParagraph();" class="visit-btn-class">
-            VISIT
-        </button>
+        <a class="project-name">
+            <div class="slide-name">
+                <h2 class="h2-project">
+                    <div class="slide-name-h2" id="project-id" data-value=""></div>
+                </h2>
+            </div>
+        </a>
     </div>
+    <button id="visit-btn" onclick= "updateParagraph();" class="visit-btn-class">
+        <span id="visit" data-value="VISIT">VISIT</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 9 9" aria-hidden="true" class="icon">
+            <path class="fill-current" d="M6.4531 3.54v3.84h1.84V.44h-6.98v1.82h3.88l-5.019997 5L1.4331 8.54l5.02-5Z"></path>
+        </svg>
+    </button>
+
     
-    <div class="footer">
-        <div class="slide-info">
            <div class="year">
-                <p>YEAR</p>
+                <div class="year-bullet">
+                    <span class="icon-ul"></span>
+                    <p class="year-heading">
+                        YEAR
+                    </p>
+                </div>
                 <p id="year-info" class="year-data"></p>
            </div> 
            <div class="agency">
-                <p>AGENCY</p>
+                <div class="agency-bullet">
+                    <span class="icon-ul"></span>
+                    <p>
+                        AGENCY
+                    </p>
+                </div>
                 <p id="agency-info">/p>
            </div>
            <div class="role">
-                <p>ROLE</p>
+                <div class="role-bullet">
+                    <span class="icon-ul"></span>
+                    <p>
+                        ROLE
+                    </p>
+                </div>
                 <p id="role-info"></p>
            </div>
            <div class="awards">
-                <p>AWARDS</p>
+                <div class="award-bullet">
+                    <span class="icon-ul"></span>
+                    <p class="awards-heading">
+                        AWARDS
+                    </p>
+                </div>
                 <p id="awards-info"></p>
            </div>
-        </div>
     </div>
 
     <div class="cursor" data-cursor="" id="cursor-id">
@@ -167,6 +199,7 @@
             <circle cx="16" cy="16" r="2" style="opacity:1;" class="cursor" data-centre-dot=""></circle>
         </svg>
     </div>
+</div>
 
     
     <!-- unpkg -->

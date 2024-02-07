@@ -1,4 +1,4 @@
-@media screen and (min-width: 1373px) {
+@media screen and (min-width: 1023px) {
 .hero-img{
     position: fixed;
     right: 3.9464882943144%;
@@ -140,23 +140,15 @@
     background-size: cover;    
 }
 }
-@media screen and (max-width: 1373px) {
-        .hero-img{
-            position: fixed;
-            margin-left: 2.54117647vw;
-            top: 23.8059136vh;
-            width: 95.2941176vw;
-            height: 31.1940864vh;
-            display: flex;
-        }
-        
-        .mask{
-            position: absolute;
-            width: 95.2941176vw;
-            height: 31.1940864vh;
-            background: url(assets/images/image.avif);
-            background-size: cover;
-        }
+
+@media screen and (max-width: 1023px) {
+    .mask {
+        background: url(assets/images/image.avif);
+        background-size: cover;
+        grid-area: 1 / 1 / 5 / 11;
+        height: 100%;
+        width: 100%;
+    }
         
         .mask:nth-child(1){
             clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
@@ -239,45 +231,43 @@
         }
         
         .maskP1{
-            position: absolute;
-            width: 94.9090909vw;
-            height: 28.95vh;
+            grid-area: 1 / 1 / 5 / 11;
+            height: 100%;
+            width: 100%;
             background: url(assets/images/image2.webp);
             background-size: cover;    
         }
         
-        .project-a-tag{
-            display: inline-flex;
-        }
+        
         
         .maskP2{
-            position: absolute;
-            width: 94.9090909vw;
-            height: 28.95vh;
+            grid-area: 1 / 1 / 5 / 11;
+            height: 100%;
+            width: 100%;
             background: url(assets/images/james-hardman-09sXF-mS8fc-unsplash.jpg);
             background-size: cover;    
         }
         
         .maskP3{
-            position: absolute;
-            width: 51vw;
-            height: 28.95vh;
+            grid-area: 1 / 1 / 5 / 11;
+            height: 100%;
+            width: 100%;
             background: url(assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg);
             background-size: cover;    
         }
         
         .maskP4{
-            position: absolute;
-            width: 51vw;
-            height: 28.95vh;
+            grid-area: 1 / 1 / 5 / 11;
+            height: 100%;
+            width: 100%;
             background: url(assets/images/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg);
             background-size: cover;    
         }
         
         .maskP5{
-            position: absolute;
-            width: 51vw;
-            height: 28.95vh;
+            grid-area: 1 / 1 / 5 / 11;
+            height: 100%;
+            width: 100%;
             background: url(assets/images/pawel-czerwinski-ruJm3dBXCqw-unsplash.jpg);
             background-size: cover;    
         }

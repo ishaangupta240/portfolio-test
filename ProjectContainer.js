@@ -38,6 +38,8 @@ const values = [
   let isAnimating = false;
 
   function updateParagraph() {
+    if(isAnimating || isAnimating2 || isAnimating3 || isAnimating4 || isAnimating5 || isAnimating6 || isAnimating7 || isAnimating8 || isAnimating9 || isAnimating10 || isAnimating11 || isAnimating12) return;
+    
     currentIndex = (currentIndex + 1) % values.length;
     pageProgress = (currentIndex) % values.length;
     const projectDataValue = document.getElementById("project-id");
@@ -800,6 +802,7 @@ let isAnimating6 = false;
   }
 
   function decreaseIndex() {
+    if(isAnimating || isAnimating2 || isAnimating3 || isAnimating4 || isAnimating5 || isAnimating6 || isAnimating7 || isAnimating8 || isAnimating9 || isAnimating10 || isAnimating11 || isAnimating12) return;
     currentIndex = (currentIndex - 1 + values.length) % values.length;
     pageProgress = (currentIndex) % values.length;
     updateProjectInfo();
@@ -1198,7 +1201,7 @@ function animateMasksIn9(masksPath) {
         ease: "back.out(1.7)",
         onComplete: () => {
           setTimeout(() => {
-            isAnimating8 = false;
+            isAnimating9 = false;
           }, 950);
         }
       });
@@ -1504,4 +1507,3 @@ function animateMasksIn12(masksPath) {
     console.error("No masks found or masksArray4 is not iterable.");
   }
 }
-

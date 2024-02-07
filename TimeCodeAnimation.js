@@ -65,34 +65,79 @@ document.getElementById("info-btn").onmouseover = event => {
 
 
 //Visit Randomizer
-const letterPool = "!@#$%&?";
+const infoLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-let animationIntervalId = null;
+let infoInterval = null;
 
-document.getElementById("visit-btn").onmouseover = mouseOverEvent => {  
-  let currentIteration = 0;
+document.getElementById("visit-btn").onmouseover = infoEvent => {  
+  let infoIteration = 0;
+  const infoTargetElement = document.getElementById("visit");
   
-  clearInterval(animationIntervalId);
+  clearInterval(infoInterval);
   
-  animationIntervalId = setInterval(() => {
-    mouseOverEvent.target.innerText = mouseOverEvent.target.innerText
+  infoInterval = setInterval(() => {
+    infoTargetElement.innerText = infoTargetElement.dataset.value
       .split("")
-      .map((letter, index) => {
-        if(index < currentIteration) {
-          return mouseOverEvent.target.dataset.value[index];
+      .map((infoLetter, index) => {
+        if(index < infoIteration) {
+          return infoTargetElement.dataset.value[index];
         }
       
-        return letterPool[Math.floor(Math.random() * 7)];
+        return infoLetters[Math.floor(Math.random() * 26)];
       })
       .join("");
     
-    if(currentIteration >= mouseOverEvent.target.dataset.value.length){ 
-      clearInterval(animationIntervalId);
+    if(infoIteration >= infoTargetElement.dataset.value.length){ 
+      clearInterval(infoInterval);
     }
     
-    currentIteration += 0.7;
+    infoIteration += 0.75;
   }, 30);
-};
+}
+
+//Visit Interval Randomizer
+function updateInfo() {
+  var infoIteration = 0;
+  var infoTargetElement = document.getElementById("visit");
+  var infoLetters = "@#!$%&?";
+
+  if (infoTargetElement.dataset.intervalId) {
+    clearInterval(infoTargetElement.dataset.intervalId);
+  }
+
+  var intervalId = setInterval(function() {
+    infoTargetElement.innerText = infoTargetElement.dataset.value
+      .split("")
+      .map(function(infoLetter, index) {
+        if(index < infoIteration) {
+          return infoTargetElement.dataset.value[index];
+        }
+
+        return infoLetters[Math.floor(Math.random() * 26)];
+      })
+      .join("");
+
+    if(infoIteration >= infoTargetElement.dataset.value.length){ 
+      clearInterval(intervalId);
+    }
+
+    infoIteration += 0.5;
+  }, 30);
+
+  infoTargetElement.dataset.intervalId = intervalId;
+}
+
+function runAtRandomIntervals() {
+  setInterval(function() {
+      var interval = Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000;
+      console.clear();
+      console.log(interval);
+      setTimeout(function() {
+          updateInfo();
+      }, interval);
+  }, 5000);
+}
+runAtRandomIntervals();
 
 //Project Name Randomizer
 const letterPool1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

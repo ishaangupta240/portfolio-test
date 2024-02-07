@@ -93,8 +93,3 @@ function randomTheme(){
       // Add the new class
       element.classList.add(predefinedClasses[currentClassIndex]);
     }
-
-
-
-
-    
