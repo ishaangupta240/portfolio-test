@@ -579,7 +579,6 @@ p{
 
      .visit-btn-class::after .fill-current{
         transition: all .3s;
-        fill: var(--primary);
      }
 
 }
