@@ -125,17 +125,22 @@ p{
         position: relative;
     
     }
+
+    .intro-div{
+        top: 18.69437vh;
+        position: fixed;
+        left: 20vw;
+        
+    }
     
     .intro{
         line-height: 1.5;
-        top: 18.69437vh;
-        position: fixed;
-        width: 20%;
+        max-width: 255px;
         font-size: calc(8.86792px + .30189vw);
         line-height: 1.5;
-        left: 20vw;
         font-family: Favorit-Mono;
         color: var(--secondary);
+        min-height: 120px;
     }
     
     p.primary{
@@ -178,7 +183,9 @@ p{
         fill:var(--coloraccent);
     }
     
-    
+    .intro-div{
+        overflow: hidden;
+    }
     
     .button{
         position: fixed;
@@ -611,7 +618,7 @@ p{
         display: none;
     }
 
-    p.intro{
+    .intro-div{
         grid-area: i;
         align-self: center;
         align-items: flex-start;
@@ -622,6 +629,14 @@ p{
         font-size: calc(8.86792px + .30189vw);
         line-height: 1.5;
         font-family: Neue Haas;
+        overflow: hidden;
+    }
+    p.intro{
+        font-size: calc(8.86792px + .30189vw);
+        line-height: 1.5;
+        font-family: Neue Haas;
+        min-height: 85px;
+        overflow: hidden;
     }
 
     .folio{

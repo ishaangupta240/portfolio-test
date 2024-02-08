@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         if(!animationIntialized){
           animateElements();
-          animateIntroTag();
+          IntroAnimation();
         }
         fadeOutLoader();
       }
@@ -69,21 +69,113 @@ document.addEventListener("DOMContentLoaded", () => {
     } );
   }
   
-  function animateIntroTag(){
-    let originalText = introTag.textContent;
-    let currentText = "";
-    let index = 0;
-  
-    const revealText = setInterval(()=> {
-      if(index < originalText.length){
-        currentText += originalText[index];
-        introTag.textContent = currentText;
-        index++;
-      }
-      else {
-        clearInterval(revealText);
-      }
-    }, 20);
+
+  function IntroAnimation(){
+    var Messenger = function(el, animationSpeed) {
+      'use strict';
+      var m = this;
+      var originalMessage; // Store the original message
+      var animateInTimeout;
+      var animateFadeBufferTimeout;
+      var cycleTextTimeout;
+      var animationCompleted = false;
+
+      m.init = function() {
+          m.codeletters = "ABCDEFGHIJ";
+          m.message = 0;
+          m.current_length = 0;
+          m.fadeBuffer = false;
+          m.messages = [
+              'ISHAAN GUPTA IS AN INDEPENDENT CREATIVE DEVELOPER AND VFX ARTIST FOCUSING ON 3D / INTERACTION / SMOOTH ANIMATIONS. BASED IN NOIDA (IN) / CURRENTLY A STUDENT IN HIGH SCHOOL.'
+          ];
+
+          // Store the original message
+          originalMessage = el.innerHTML;
+
+          // Start animation
+          animateInTimeout = setTimeout(m.animateIn, animationSpeed);
+      };
+
+      m.generateRandomString = function(length) {
+          var random_text = '';
+          while (random_text.length < length) {
+              random_text += m.codeletters.charAt(Math.floor(Math.random() * m.codeletters.length));
+          }
+
+          return random_text;
+      };
+
+      m.animateIn = function() {
+          if (m.current_length < m.messages[m.message].length) {
+              m.current_length = m.current_length + 2;
+              if (m.current_length > m.messages[m.message].length) {
+                  m.current_length = m.messages[m.message].length;
+              }
+
+              var message = m.generateRandomString(m.current_length);
+              el.innerHTML = message;
+
+              animateInTimeout = setTimeout(m.animateIn, animationSpeed);
+          } else {
+              animateFadeBufferTimeout = setTimeout(m.animateFadeBuffer, animationSpeed);
+          }
+      };
+
+      m.animateFadeBuffer = function() {
+          if (m.fadeBuffer === false) {
+              m.fadeBuffer = [];
+              for (var i = 0; i < m.messages[m.message].length; i++) {
+                  m.fadeBuffer.push({
+                      c: (Math.floor(Math.random() * 12)) + 1,
+                      l: m.messages[m.message].charAt(i)
+                  });
+              }
+          }
+
+          var do_cycles = false;
+          var message = '';
+
+          for (var i = 0; i < m.fadeBuffer.length; i++) {
+              var fader = m.fadeBuffer[i];
+              if (fader.c > 0) {
+                  do_cycles = true;
+                  fader.c--;
+                  message += m.codeletters.charAt(Math.floor(Math.random() * m.codeletters.length));
+              } else {
+                  message += fader.l;
+              }
+          }
+
+          el.innerHTML = message;
+
+          if (do_cycles === true) {
+              animateFadeBufferTimeout = setTimeout(m.animateFadeBuffer, animationSpeed);
+          } else {
+              cycleTextTimeout = setTimeout(m.cycleText, animationSpeed);
+          }
+      };
+
+      m.cycleText = function() {
+        if (!animationCompleted) {
+            animationCompleted = true;
+            el.innerHTML = m.messages[m.message]; // Set final message
+        }
+    };
+
+      m.stopAnimation = function() {
+          clearTimeout(animateInTimeout);
+          clearTimeout(animateFadeBufferTimeout);
+          clearTimeout(cycleTextTimeout);
+          el.innerHTML = originalMessage; // Restore original message
+      };
+
+      m.init();
+  }
+
+  console.clear();
+  // Specify animation speed in milliseconds (e.g., 50 for faster, 100 for normal, 200 for slower)
+  var animationSpeed = 25;
+  var messenger = new Messenger(document.querySelector('.intro'), animationSpeed);
   }
   
   function animateMasks() {
