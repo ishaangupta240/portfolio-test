@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const counter = document.querySelector(".counter");
     const loader = document.querySelector(".loader");
-    const elementsToAnimate = document.querySelectorAll(
-      "p:not(.intro), .logo h1"
-    );
-    const introTag  = document.querySelector(".intro");
     let animationIntialized = false;
   
     function shuffleText(finalText, duration, callback){
@@ -35,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         
         if(!animationIntialized){
           animateElements();
-          IntroAnimation();
         }
         fadeOutLoader();
       }
@@ -45,137 +40,179 @@ document.addEventListener("DOMContentLoaded", () => {
   function animateElements(){
     if(animationIntialized) return;
     animationIntialized = true;
-  
-    elementsToAnimate.forEach((element) =>{
-      let originalText = element.textContent;
-      let index = 0;
-  
-      const shuffleElement = setInterval(() => {
-        if (index < originalText.length){
-          let shuffledText = "";
-          for(let i = 0; i<=index; i++){
-            shuffledText +=
-            i < index ? originalText[i] : Math.random().toString(36)[2];
-          }
-          element.textContent = 
-            shuffledText + originalText.substring(index + 1);
-          index++;
-        }
-        else{
-          clearInterval(shuffleElement);
-          element.textContent = originalText;
-        }
-      }, 100);
-    } );
+      const element1 = document.getElementById("logo-container");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 1.4 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  setTimeout(IntroAnimation, 0);
+  setTimeout(animateElements1, 370);
+  setTimeout(animateElements4, 370);
+  setTimeout(animateElements6, 370);
+  }
+
+  function animateElements1 (){
+    const element1 = document.getElementById("prev");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 0.2, duration: 0.3 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 0.7, duration: 0.3 },
+            { opacity: 0.1, duration: 0.4 },
+            { opacity: 1, duration: 0.5 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  setTimeout(animateElements2, 200);
+  }
+
+  function animateElements2 (){
+    const element1 = document.getElementById("outerbar");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 0.2, duration: 0.2 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 0.7, duration: 0.3 },
+            { opacity: 0.1, duration: 0.4 },
+            { opacity: 1, duration: 0.5 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  setTimeout(animateElements3, 300);
+  }
+
+  function animateElements3 (){
+    const element1 = document.getElementById("next");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 0.2, duration: 0.2 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 0.7, duration: 0.3 },
+            { opacity: 0.1, duration: 0.4 },
+            { opacity: 1, duration: 0.5 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements4 (){
+    const element1 = document.getElementById("project-counter-id");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 0.4, duration: 0.3 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 0.7, duration: 0.3 },
+            { opacity: 0.1, duration: 0.5 },
+            { opacity: 1, duration: 0.6 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  setTimeout(animateElements5, 100);
+  }
+
+  function animateElements5 (){
+    const element1 = document.getElementById("project-id");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 0.3, duration: 0.4 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 0.8, duration: 0.6 },
+            { opacity: 0.3, duration: 0.2 },
+            { opacity: 1, duration: 0.2 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements6 (){
+    const element1 = document.getElementById("visit-btn");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 0.3, duration: 0.4 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 0.8, duration: 0.6 },
+            { opacity: 0.3, duration: 0.2 },
+            { opacity: 1, duration: 0.2 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  setTimeout(animateElements2, 200);
   }
   
 
   function IntroAnimation(){
-    var Messenger = function(el, animationSpeed) {
-      'use strict';
-      var m = this;
-      var originalMessage; // Store the original message
-      var animateInTimeout;
-      var animateFadeBufferTimeout;
-      var cycleTextTimeout;
-      var animationCompleted = false;
-
-      m.init = function() {
-          m.codeletters = "ABCDEFGHIJ";
-          m.message = 0;
-          m.current_length = 0;
-          m.fadeBuffer = false;
-          m.messages = [
-              'ISHAAN GUPTA IS AN INDEPENDENT CREATIVE DEVELOPER AND VFX ARTIST FOCUSING ON 3D / INTERACTION / SMOOTH ANIMATIONS. BASED IN NOIDA (IN) / CURRENTLY A STUDENT IN HIGH SCHOOL.'
-          ];
-
-          // Store the original message
-          originalMessage = el.innerHTML;
-
-          // Start animation
-          animateInTimeout = setTimeout(m.animateIn, animationSpeed);
-      };
-
-      m.generateRandomString = function(length) {
-          var random_text = '';
-          while (random_text.length < length) {
-              random_text += m.codeletters.charAt(Math.floor(Math.random() * m.codeletters.length));
-          }
-
-          return random_text;
-      };
-
-      m.animateIn = function() {
-          if (m.current_length < m.messages[m.message].length) {
-              m.current_length = m.current_length + 2;
-              if (m.current_length > m.messages[m.message].length) {
-                  m.current_length = m.messages[m.message].length;
-              }
-
-              var message = m.generateRandomString(m.current_length);
-              el.innerHTML = message;
-
-              animateInTimeout = setTimeout(m.animateIn, animationSpeed);
-          } else {
-              animateFadeBufferTimeout = setTimeout(m.animateFadeBuffer, animationSpeed);
-          }
-      };
-
-      m.animateFadeBuffer = function() {
-          if (m.fadeBuffer === false) {
-              m.fadeBuffer = [];
-              for (var i = 0; i < m.messages[m.message].length; i++) {
-                  m.fadeBuffer.push({
-                      c: (Math.floor(Math.random() * 12)) + 1,
-                      l: m.messages[m.message].charAt(i)
-                  });
-              }
-          }
-
-          var do_cycles = false;
-          var message = '';
-
-          for (var i = 0; i < m.fadeBuffer.length; i++) {
-              var fader = m.fadeBuffer[i];
-              if (fader.c > 0) {
-                  do_cycles = true;
-                  fader.c--;
-                  message += m.codeletters.charAt(Math.floor(Math.random() * m.codeletters.length));
-              } else {
-                  message += fader.l;
-              }
-          }
-
-          el.innerHTML = message;
-
-          if (do_cycles === true) {
-              animateFadeBufferTimeout = setTimeout(m.animateFadeBuffer, animationSpeed);
-          } else {
-              cycleTextTimeout = setTimeout(m.cycleText, animationSpeed);
-          }
-      };
-
-      m.cycleText = function() {
-        if (!animationCompleted) {
-            animationCompleted = true;
-            el.innerHTML = m.messages[m.message]; // Set final message
-        }
-    };
-
-      m.stopAnimation = function() {
-          clearTimeout(animateInTimeout);
-          clearTimeout(animateFadeBufferTimeout);
-          clearTimeout(cycleTextTimeout);
-          el.innerHTML = originalMessage; // Restore original message
-      };
-
-      m.init();
-  }
-
-  console.clear();
-  // Specify animation speed in milliseconds (e.g., 50 for faster, 100 for normal, 200 for slower)
-  var animationSpeed = 25;
-  var messenger = new Messenger(document.querySelector('.intro'), animationSpeed);
+    const text = baffle(".intro");
+    text.set({
+      characters : '█░█ ▒<░▒░ ░█/▒▒ ▓▓/ █<<▓░ <░▒▓ ██░ ░▓<> ▓▓▒░',
+      speed: 180
+    });
+    text.start();
+    text.reveal(3000);
   }
   
   function animateMasks() {

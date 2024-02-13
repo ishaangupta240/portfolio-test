@@ -30,7 +30,7 @@
 
     <div class="nav">
         <a href="index.html" id="logo-a">
-        <div class="logo-container" id="logo-container">
+        <div class="logo-container" id="logo-container" style="opacity: 0;">
             <div class="logo" id="logo-div">
                 <svg height="" xmlns="http://www.w3.org/2000/svg" id="logo-svg">
                     <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke-width="0.25mm" class="logo">
@@ -78,10 +78,9 @@
         </div>
     </div>
 
-    <div class="intro-div">
         <p class="intro" id="intro">
+            ISHAAN GUPTA IS AN INDEPENDENT CREATIVE DEVELOPER AND VFX ARTIST FOCUSING ON 3D / INTERACTION / SMOOTH ANIMATIONS. BASED IN NOIDA (IN) / CURRENTLY A STUDENT IN HIGH SCHOOL.
         </p>
-    </div>
 
     <div class="folio">
         <p class="primary">FOLIO</p>
@@ -115,29 +114,29 @@
     </a>
 
     
-    <div class="page-bar">
+    <div class="page-bar" id="page-bar">
         <div class="bar">
-        <button class="prev" id="prev" data-value="PREV" onclick="decreaseIndex();">PREV</button>
-        <div class="outerbar">
+        <button class="prev" id="prev" data-value="PREV" onclick="decreaseIndex();" style="opacity: 0;">PREV</button>
+        <div class="outerbar" id="outerbar" style="opacity: 0;">
             <div class="innerbar" id="progress"></div>
         </div>
-        <button class="next" id="next" data-value="NEXT" onclick="updateParagraph();">NEXT</button>
+        <button class="next" id="next" data-value="NEXT" onclick="updateParagraph();" style="opacity: 0;">NEXT</button>
         </div>
     </div>
 
     <div class="slide-copy">
         <div class="slide-index">
-            <p id="project-counter-id" class="project-counter"></p>
+            <p id="project-counter-id" class="project-counter" style="opacity: 0;"></p>
         </div>
         <a class="project-name">
             <div class="slide-name">
                 <h2 class="h2-project">
-                    <div class="slide-name-h2" id="project-id" data-value=""></div>
+                    <div class="slide-name-h2" id="project-id" data-value="" style="opacity: 0;"></div>
                 </h2>
             </div>
         </a>
     </div>
-    <button id="visit-btn" onclick= "updateParagraph();" class="visit-btn-class">
+    <button id="visit-btn" onclick= "updateParagraph();" class="visit-btn-class" style="opacity: 0;">
         <span id="visit" data-value="VISIT">VISIT</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 9 9" aria-hidden="true" class="icon">
             <path class="fill-current" d="M6.4531 3.54v3.84h1.84V.44h-6.98v1.82h3.88l-5.019997 5L1.4331 8.54l5.02-5Z"></path>
@@ -211,6 +210,7 @@
     <script src="TimeCodeAnimation.js"></script>
     <script src="ViewportElementChanger.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
     <script src="DOMContentLoader.js"></script>
     <script src="ProjectContainer.js"></script>
     <script src="ThemesDOMRandomizer.js"></script>

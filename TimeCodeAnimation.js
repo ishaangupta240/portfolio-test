@@ -130,7 +130,6 @@ function updateInfo() {
 function runAtRandomIntervals() {
   setInterval(function() {
       var interval = Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000;
-      console.clear();
       console.log(interval);
       setTimeout(function() {
           updateInfo();
