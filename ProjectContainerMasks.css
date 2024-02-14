@@ -1,8 +1,8 @@
 @media screen and (min-width: 1023px) {
 .hero-img{
     position: fixed;
-    right: 3.9464882943144%;
-    top: 37.68538874%;
+    right: 3.1364882943144vw;
+    top: 37.68538874vh;
     width: 51vw;
     height: 28.95vh;
     display: flex;

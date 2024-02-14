@@ -125,6 +125,11 @@ p{
         position: relative;
     
     }
+
+    .year-heading,.agency-heading,.role-heading,.awards-heading{
+        line-height: 2;
+        min-height: 1.5em;
+    }
     
     #role-info,#agency-info,#awards-info{
         text-transform: uppercase;
@@ -151,8 +156,16 @@ p{
     
     .folio{
         position: fixed;
-        right: 3.9464882943144%;
-        top: 21.13538874%;
+        right: 3.1364882943144vw;
+        top: 21.13538874vh;
+    }
+
+    .awards-heading{
+        min-width: 2.834rem;
+    }
+
+    .primary{
+        line-height: 0.8;
     }
     
     .cursor{
@@ -507,7 +520,7 @@ p{
     }
 
     .award-bullet,.agency-bullet{
-        padding-top: 0.7em;
+        padding-top: 0em;
         justify-self: flex-start;
         align-self: flex-start;
         vertical-align: top;
@@ -618,7 +631,7 @@ p{
         font-size: calc(8.86792px + .30189vw);
         line-height: 1.5;
         font-family: Neue Haas;
-        min-height: 106px;
+        min-height: 77px;
         overflow: hidden;
         grid-area: i;
         align-self: center;

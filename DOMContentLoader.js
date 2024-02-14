@@ -60,6 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(animateElements1, 370);
   setTimeout(animateElements4, 370);
   setTimeout(animateElements6, 370);
+  setTimeout(animateElements7, 200);
+  setTimeout(animateElements11, 200);
+  setTimeout(animateElements12, 300);
   }
 
   function animateElements1 (){
@@ -186,11 +189,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const blinkingAnimation = (element) => {
         gsap.to(element, { 
           keyframes: [
-            { opacity: 0.3, duration: 0.4 },
-            { opacity: 0, duration: 0.3 },
-            { opacity: 0.8, duration: 0.6 },
-            { opacity: 0.3, duration: 0.2 },
-            { opacity: 1, duration: 0.2 }
+            { opacity: 0.1, duration: 0.1 },
+            { opacity: 0.6, duration: 0.2 },
+            { opacity: 0.1, duration: 0.1 },
+            { opacity: 0.8, duration: 0.4 },
+            { opacity: 0.8, duration: 0.4 },
+            { opacity: 0.1, duration: 0.2 },
+            { opacity: 1, duration: 0.4 }
           ],
           onComplete: stopAnimation 
         });
@@ -201,7 +206,586 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   blinkingAnimation(element1);
-  setTimeout(animateElements2, 200);
+  }
+
+  function animateElements7 (){
+    var Messenger = function(el){
+      'use strict';
+      var m = this;
+      
+      m.init = function(){
+        m.codeletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        m.message = 0;
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        m.messages = [
+          'YEAR'
+        ];
+        
+        setTimeout(m.animateIn, 100);
+      };
+      
+      m.generateRandomString = function(length){
+        var random_text = '';
+        while(random_text.length < length){
+          random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+        } 
+        
+        return random_text;
+      };
+      
+      m.animateIn = function(){
+        if(m.current_length < m.messages[m.message].length){
+          m.current_length = m.current_length + 1;
+          if(m.current_length > m.messages[m.message].length) {
+            m.current_length = m.messages[m.message].length;
+          }
+          
+          var message = m.messages[m.message].substring(0, m.current_length);
+          $(el).html(message);
+          
+          setTimeout(m.animateIn, 50); // Adjust the timeout value for animation speed
+        } else { 
+          // Animation has completed, stop further animation
+          return;
+        }
+      };
+      
+      
+      m.animateFadeBuffer = function(){
+        if(m.fadeBuffer === false){
+          m.fadeBuffer = [];
+          for(var i = 0; i < m.messages[m.message].length; i++){
+            m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+          }
+        }
+        
+        var do_cycles = false;
+        var message = ''; 
+        
+        for(var i = 0; i < m.fadeBuffer.length; i++){
+          var fader = m.fadeBuffer[i];
+          if(fader.c > 0){
+            do_cycles = true;
+            fader.c--;
+            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+          } else {
+            message += fader.l;
+          }
+        }
+        
+        $(el).html(message);
+        
+        if(do_cycles === true){
+          setTimeout(m.animateFadeBuffer, 50);
+        } else {
+          setTimeout(m.cycleText, 2000);
+        }
+      };
+      
+      m.cycleText = function(){
+        m.message = m.message + 1;
+        if(m.message >= m.messages.length){
+          m.message = 0;
+        }
+        
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        $(el).html('');
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.init();
+    }
+    
+    console.clear();
+    var messenger = new Messenger($('#year-heading'));
+
+    setTimeout(animateElements8, 74);
+  }
+
+  function animateElements8() {
+    var Messenger = function(el){
+      'use strict';
+      var m = this;
+      
+      m.init = function(){
+        m.codeletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        m.message = 0;
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        m.messages = [
+          'AGENCY'
+        ];
+        
+        setTimeout(m.animateIn, 100);
+      };
+      
+      m.generateRandomString = function(length){
+        var random_text = '';
+        while(random_text.length < length){
+          random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+        } 
+        
+        return random_text;
+      };
+      
+      m.animateIn = function(){
+        if(m.current_length < m.messages[m.message].length){
+          m.current_length = m.current_length + 1;
+          if(m.current_length > m.messages[m.message].length) {
+            m.current_length = m.messages[m.message].length;
+          }
+          
+          var message = m.messages[m.message].substring(0, m.current_length);
+          $(el).html(message);
+          
+          setTimeout(m.animateIn, 50); // Adjust the timeout value for animation speed
+        } else { 
+          // Animation has completed, stop further animation
+          return;
+        }
+      };
+      
+      
+      m.animateFadeBuffer = function(){
+        if(m.fadeBuffer === false){
+          m.fadeBuffer = [];
+          for(var i = 0; i < m.messages[m.message].length; i++){
+            m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+          }
+        }
+        
+        var do_cycles = false;
+        var message = ''; 
+        
+        for(var i = 0; i < m.fadeBuffer.length; i++){
+          var fader = m.fadeBuffer[i];
+          if(fader.c > 0){
+            do_cycles = true;
+            fader.c--;
+            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+          } else {
+            message += fader.l;
+          }
+        }
+        
+        $(el).html(message);
+        
+        if(do_cycles === true){
+          setTimeout(m.animateFadeBuffer, 50);
+        } else {
+          setTimeout(m.cycleText, 2000);
+        }
+      };
+      
+      m.cycleText = function(){
+        m.message = m.message + 1;
+        if(m.message >= m.messages.length){
+          m.message = 0;
+        }
+        
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        $(el).html('');
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.init();
+    }
+    
+    console.clear();
+    var messenger = new Messenger($('#agency-heading'));
+ 
+    setTimeout(animateElements9, 74);
+  }
+
+  function animateElements9() {
+    var Messenger = function(el){
+      'use strict';
+      var m = this;
+      
+      m.init = function(){
+        m.codeletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        m.message = 0;
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        m.messages = [
+          'ROLE'
+        ];
+        
+        setTimeout(m.animateIn, 100);
+      };
+      
+      m.generateRandomString = function(length){
+        var random_text = '';
+        while(random_text.length < length){
+          random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+        } 
+        
+        return random_text;
+      };
+      
+      m.animateIn = function(){
+        if(m.current_length < m.messages[m.message].length){
+          m.current_length = m.current_length + 1;
+          if(m.current_length > m.messages[m.message].length) {
+            m.current_length = m.messages[m.message].length;
+          }
+          
+          var message = m.messages[m.message].substring(0, m.current_length);
+          $(el).html(message);
+          
+          setTimeout(m.animateIn, 50); // Adjust the timeout value for animation speed
+        } else { 
+          // Animation has completed, stop further animation
+          return;
+        }
+      };
+      
+      
+      m.animateFadeBuffer = function(){
+        if(m.fadeBuffer === false){
+          m.fadeBuffer = [];
+          for(var i = 0; i < m.messages[m.message].length; i++){
+            m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+          }
+        }
+        
+        var do_cycles = false;
+        var message = ''; 
+        
+        for(var i = 0; i < m.fadeBuffer.length; i++){
+          var fader = m.fadeBuffer[i];
+          if(fader.c > 0){
+            do_cycles = true;
+            fader.c--;
+            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+          } else {
+            message += fader.l;
+          }
+        }
+        
+        $(el).html(message);
+        
+        if(do_cycles === true){
+          setTimeout(m.animateFadeBuffer, 50);
+        } else {
+          setTimeout(m.cycleText, 2000);
+        }
+      };
+      
+      m.cycleText = function(){
+        m.message = m.message + 1;
+        if(m.message >= m.messages.length){
+          m.message = 0;
+        }
+        
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        $(el).html('');
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.init();
+    }
+    
+    console.clear();
+    var messenger = new Messenger($('#role-heading'));
+
+    setTimeout(animateElements10, 74);
+ 
+  }
+
+  function animateElements10() {
+    var Messenger = function(el){
+      'use strict';
+      var m = this;
+      
+      m.init = function(){
+        m.codeletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        m.message = 0;
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        m.messages = [
+          'AWARDS'
+        ];
+        
+        setTimeout(m.animateIn, 100);
+      };
+      
+      m.generateRandomString = function(length){
+        var random_text = '';
+        while(random_text.length < length){
+          random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+        } 
+        
+        return random_text;
+      };
+      
+      m.animateIn = function(){
+        if(m.current_length < m.messages[m.message].length){
+          m.current_length = m.current_length + 1;
+          if(m.current_length > m.messages[m.message].length) {
+            m.current_length = m.messages[m.message].length;
+          }
+          
+          var message = m.messages[m.message].substring(0, m.current_length);
+          $(el).html(message);
+          
+          setTimeout(m.animateIn, 50); // Adjust the timeout value for animation speed
+        } else { 
+          // Animation has completed, stop further animation
+          return;
+        }
+      };
+      
+      
+      m.animateFadeBuffer = function(){
+        if(m.fadeBuffer === false){
+          m.fadeBuffer = [];
+          for(var i = 0; i < m.messages[m.message].length; i++){
+            m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+          }
+        }
+        
+        var do_cycles = false;
+        var message = ''; 
+        
+        for(var i = 0; i < m.fadeBuffer.length; i++){
+          var fader = m.fadeBuffer[i];
+          if(fader.c > 0){
+            do_cycles = true;
+            fader.c--;
+            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+          } else {
+            message += fader.l;
+          }
+        }
+        
+        $(el).html(message);
+        
+        if(do_cycles === true){
+          setTimeout(m.animateFadeBuffer, 50);
+        } else {
+          setTimeout(m.cycleText, 2000);
+        }
+      };
+      
+      m.cycleText = function(){
+        m.message = m.message + 1;
+        if(m.message >= m.messages.length){
+          m.message = 0;
+        }
+        
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        $(el).html('');
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.init();
+    }
+    
+    console.clear();
+    var messenger = new Messenger($('#awards-heading'));
+ 
+  }
+
+  function animateElements11(){
+    var Messenger = function(el){
+      'use strict';
+      var m = this;
+      
+      m.init = function(){
+        m.codeletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        m.message = 0;
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        m.messages = [
+          'FOLIO'
+        ];
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.generateRandomString = function(length){
+        var random_text = '';
+        while(random_text.length < length){
+          random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+        } 
+        
+        return random_text;
+      };
+      
+      m.animateIn = function(){
+        if(m.current_length < m.messages[m.message].length){
+          m.current_length = m.current_length + 1;
+          if(m.current_length > m.messages[m.message].length) {
+            m.current_length = m.messages[m.message].length;
+          }
+          
+          var message = m.messages[m.message].substring(m.messages[m.message].length - m.current_length, m.messages[m.message].length);
+          $(el).html(message);
+          
+          setTimeout(m.animateIn, 100); // Adjust the timeout value for animation speed
+        } else { 
+          // Animation has completed, stop further animation
+          return;
+        }
+      };
+      
+      
+      m.animateFadeBuffer = function(){
+        if(m.fadeBuffer === false){
+          m.fadeBuffer = [];
+          for(var i = 0; i < m.messages[m.message].length; i++){
+            m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+          }
+        }
+        
+        var do_cycles = false;
+        var message = ''; 
+        
+        for(var i = 0; i < m.fadeBuffer.length; i++){
+          var fader = m.fadeBuffer[i];
+          if(fader.c > 0){
+            do_cycles = true;
+            fader.c--;
+            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+          } else {
+            message += fader.l;
+          }
+        }
+        
+        $(el).html(message);
+        
+        if(do_cycles === true){
+          setTimeout(m.animateFadeBuffer, 100);
+        } else {
+          setTimeout(m.cycleText, 2000);
+        }
+      };
+      
+      m.cycleText = function(){
+        m.message = m.message + 1;
+        if(m.message >= m.messages.length){
+          m.message = 0;
+        }
+        
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        $(el).html('');
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.init();
+    }
+    
+    console.clear();
+    var messenger = new Messenger($('#folio'));
+    
+  }
+
+  function animateElements12(){
+    var Messenger = function(el){
+      'use strict';
+      var m = this;
+      
+      m.init = function(){
+        m.codeletters = "1234567890";
+        m.message = 0;
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        m.messages = [
+          '/2024'
+        ];
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.generateRandomString = function(length){
+        var random_text = '';
+        while(random_text.length < length){
+          random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+        } 
+        
+        return random_text;
+      };
+      
+      m.animateIn = function(){
+        if(m.current_length < m.messages[m.message].length){
+          m.current_length = m.current_length + 1;
+          if(m.current_length > m.messages[m.message].length) {
+            m.current_length = m.messages[m.message].length;
+          }
+          
+          var message = m.messages[m.message].substring(m.messages[m.message].length - m.current_length, m.messages[m.message].length);
+          $(el).html(message);
+          
+          setTimeout(m.animateIn, 100); // Adjust the timeout value for animation speed
+        } else { 
+          // Animation has completed, stop further animation
+          return;
+        }
+      };
+      
+      
+      m.animateFadeBuffer = function(){
+        if(m.fadeBuffer === false){
+          m.fadeBuffer = [];
+          for(var i = 0; i < m.messages[m.message].length; i++){
+            m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+          }
+        }
+        
+        var do_cycles = false;
+        var message = ''; 
+        
+        for(var i = 0; i < m.fadeBuffer.length; i++){
+          var fader = m.fadeBuffer[i];
+          if(fader.c > 0){
+            do_cycles = true;
+            fader.c--;
+            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+          } else {
+            message += fader.l;
+          }
+        }
+        
+        $(el).html(message);
+        
+        if(do_cycles === true){
+          setTimeout(m.animateFadeBuffer, 100);
+        } else {
+          setTimeout(m.cycleText, 2000);
+        }
+      };
+      
+      m.cycleText = function(){
+        m.message = m.message + 1;
+        if(m.message >= m.messages.length){
+          m.message = 0;
+        }
+        
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        $(el).html('');
+        
+        setTimeout(m.animateIn, 200);
+      };
+      
+      m.init();
+    }
+    
+    console.clear();
+    var messenger = new Messenger($('#folio-year'));
+    
   }
   
 
