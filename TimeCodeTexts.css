@@ -631,7 +631,7 @@ p{
         font-size: calc(8.86792px + .30189vw);
         line-height: 1.5;
         font-family: Neue Haas;
-        min-height: 77px;
+        min-height: 4.8125rem;
         overflow: hidden;
         grid-area: i;
         align-self: center;
@@ -1013,6 +1013,10 @@ p{
         column-gap: 0.5rem;
         display: flex;
         height: 2.5em;
+    }
+
+    .year-heading, .awards-heading {
+        min-height: 1.5em;
     }
 }
 
