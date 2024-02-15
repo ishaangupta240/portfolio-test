@@ -11,8 +11,14 @@ const logosvg = document.getElementById("logo-svg");
 const logoNameSvg = document.getElementById("logo-name-svg");
 const logosvgDiv = document.getElementById("logo-div");
 const logoContainerSvgDiv = document.getElementById("logo-container");
+var introTag = document.getElementById("intro");
+var minHeight = introTag.clientHeight;
 
-//Values to be changes from here
+function introTagHeight(){
+    introTag.style.minHeight = minHeight + 1 + "px";
+}
+introTagHeight();
+
 function handleWidthChange(){
 if(Width <= 1023){
     logosvgDiv.style.width = "180.5px";

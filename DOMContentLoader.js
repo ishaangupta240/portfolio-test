@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         if(!animationIntialized){
           animateElements();
+          animateElements15();
         }
         fadeOutLoader();
       }
@@ -61,7 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(animateElements4, 370);
   setTimeout(animateElements6, 370);
   setTimeout(animateElements7, 200);
+  setTimeout(animateElements16, 200);
   setTimeout(animateElements11, 200);
+  setTimeout(animateElements13, 190);
+  setTimeout(animateElements14, 190);
   setTimeout(animateElements12, 300);
   }
 
@@ -303,6 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
     var messenger = new Messenger($('#year-heading'));
 
     setTimeout(animateElements8, 74);
+    setTimeout(animateElements17, 74);
   }
 
   function animateElements8() {
@@ -400,6 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
     var messenger = new Messenger($('#agency-heading'));
  
     setTimeout(animateElements9, 74);
+    setTimeout(animateElements18, 74);
   }
 
   function animateElements9() {
@@ -497,6 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
     var messenger = new Messenger($('#role-heading'));
 
     setTimeout(animateElements10, 74);
+    setTimeout(animateElements19, 74);
  
   }
 
@@ -788,6 +795,138 @@ document.addEventListener("DOMContentLoaded", () => {
     
   }
   
+  function animateElements13 (){
+    const element1 = document.getElementById("folio");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 0.3 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements14 (){
+    const element1 = document.getElementById("folio-year");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 0.3 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements15 (){
+    const element1 = document.getElementById("nav-buttons");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 1.4 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements16 (){
+    const element1 = document.getElementById("year-heading");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 0.3 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements17 (){
+    const element1 = document.getElementById("agency-heading");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 0.3 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements18 (){
+    const element1 = document.getElementById("role-heading");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 0.3 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
+
+  function animateElements19 (){
+    const element1 = document.getElementById("awards-heading");
+
+      const blinkingAnimation = (element) => {
+        gsap.to(element, { 
+          keyframes: [
+            { opacity: 1, duration: 0.3 }
+          ],
+          onComplete: stopAnimation 
+        });
+      };
+
+  const stopAnimation = (element) => {
+    gsap.killTweensOf(element);
+  };
+
+  blinkingAnimation(element1);
+  }
 
   function IntroAnimation(){
     const text = baffle(".intro");
