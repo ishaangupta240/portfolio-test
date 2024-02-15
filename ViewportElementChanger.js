@@ -15,7 +15,7 @@ var introTag = document.getElementById("intro");
 var minHeight = introTag.clientHeight;
 
 function introTagHeight(){
-    introTag.style.minHeight = maxHeight + 1 + "px";
+    introTag.style.maxHeight = minHeight + 1 + "px";
 }
 introTagHeight();
 
