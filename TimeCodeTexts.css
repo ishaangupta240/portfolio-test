@@ -660,6 +660,7 @@ p{
         font-size: calc(25.20755px + 1.81132vw);
         text-align: right;
         color: var(--third);
+        min-height: 1.645625rem;
     }
 
     .navigation{
