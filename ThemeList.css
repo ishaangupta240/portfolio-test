@@ -4,46 +4,62 @@ html.dark-theme{
     --secondary:#797872;
     --third:#cdc9b9;
     --coloraccent:#cdc9b9;
+    --colorbg:#101010;
+    --background:#cdc9b9;
 }
 html.grey-theme{
     --primary:#2a2c29;
     --secondary:#a7a597;
     --third:#5d6c6a;
     --coloraccent:#5d6c6a;
+    --colorbg:#a7a597;
+    --background:#5d6c6a;
 }
 html.lime-green-theme{
     --primary:#dddddd;
     --secondary:#3f3f3f;
     --third:#c4ff58;
     --coloraccent:#3f3f3f;
+    --colorbg:#dddddd;
+    --background:#3f3f3f;
 }
 html.khaki-theme{
     --primary:#e3e4d5;
     --secondary:#474741;
     --third:#a6a77e;
     --coloraccent:#a6a77e;
+    --colorbg:#474741;
+    --background:#a6a77e;
 }
 html.red-theme{
     --primary:#5c6057;
     --secondary:#272925;
     --third:#fe5344;
     --coloraccent:#fe5344;
+    --colorbg:#272925;
+    --background:#fe5344;
 }
 html.grey-white-theme{
     --primary:#3c4236;
     --secondary:#8d9784;
     --third:#bcc89c;
     --coloraccent:#bcc89c;
+    --colorbg:#3c4236;
+    --background:#bcc89c;
 }
 html.light-theme{
     --primary:#999d9c;
     --secondary:#797872;
     --third:#cdc9b9;
     --coloraccent:#cdc9b9;
+    --colorbg:#cdc9b9;
+    --background:#999d9c;
 }
 html.pastel-red-theme{
     --primary:#c5cfba;
     --secondary:#6d7567;
     --third:#f16d50;
     --coloraccent:#f16d50;
+    --colorbg:#c5cfba;
+    --background:#6d7567;
 }

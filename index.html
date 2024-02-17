@@ -41,7 +41,7 @@
 
             <div class="logo-name">
             <svg height="" xmlns="http://www.w3.org/2000/svg" id="logo-name-svg">
-                <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" class="logo-name-svg">
+                <g id="svgGroup1" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" class="logo-name-svg">
                     <path id="logo-name-path"  d="" vector-effect="non-scaling-stroke"/>
                 </g>
             </svg>
@@ -68,7 +68,7 @@
 
             <div class="btn3">
                 <button id="info-btn" aria-hidden="false" class="button3">
-                    <span id="menu-text" data-value="INFO">MENU</span>
+                    <span id="menu-text" data-value="INFO" onclick="menu();">MENU</span>
                 </button>
             </div>
 
@@ -201,15 +201,44 @@
     </div>
 </div>
 
-<div class="menu-buttons">
-    <div class="mobile-menu-grid">
-        <nav class="navigation-mobile">
-            <ul class="mobile-ul">
-                <li></li>
-                <li></li>
-                <li></li>
+
+<div class="mobile-menu-grid" id="mobile-menu-grid">
+    <nav class="navigation-mobile">
+        <ul class="mobile-ul">
+            <li>
+                <a href="" class="li">
+                    <span class="body5">0</span>
+                    <span class="centre-block"></span>
+                    <span class="mobile-menu">HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="li">
+                    <span class="body5">1</span>
+                    <span class=""></span>
+                    <span class="mobile-menu">PROJECTS</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="li">
+                    <span class="body5">2</span>
+                    <span class=""></span>
+                    <span class="mobile-menu">INFO</span>
+                </a>
+            </li>
             </ul>
-        </nav>
+    </nav>
+
+    <div class="title">
+        <span class="label1">©️2024</span>
+        <span class="display">
+            <span>ISHAAN</span>
+            <span>GUPTA</span>
+        </span>
+    </div>
+
+    <div class="label2">
+        <span class="item1">F/24</span>
     </div>
 </div>
 
@@ -227,5 +256,6 @@
     <script src="ProjectContainer.js"></script>
     <script src="ThemesDOMRandomizer.js"></script>
     <script src="CursorPath.js"></script>
+    <script src="NavbarButtons.js"></script>
 </body>
 </html>
