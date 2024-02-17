@@ -1117,6 +1117,9 @@ p{
         display: block;
         margin-left: auto;
         background-color: var(--colorbg);
+        transition-duration: 0.3s;
+        transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
     }
 
     .navigation-mobile{
