@@ -17,6 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, 100)
     }
+
+    function disableSwipesAndKeys() {
+      // Disable swipes
+      document.addEventListener('touchmove', preventDefault, { passive: false });
+    
+      // Disable keys
+      document.addEventListener('keydown', preventDefault);
+    }
+
+    disableSwipesAndKeys();
+
+    function enableSwipesAndKeys() {
+      // Enable swipes
+      document.removeEventListener('touchmove', preventDefault, { passive: false });
+    
+      // Enable keys
+      document.removeEventListener('keydown', preventDefault);
+    }
+    
+    // Helper function to prevent default behavior
+    function preventDefault(e) {
+      e.preventDefault();
+    }
   
   
   function removeLetters(){
@@ -303,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
       m.init();
     }
     
-    console.clear();
+     
     var messenger = new Messenger($('#year-heading'));
 
     setTimeout(animateElements8, 74);
@@ -401,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
       m.init();
     }
     
-    console.clear();
+     
     var messenger = new Messenger($('#agency-heading'));
  
     setTimeout(animateElements9, 74);
@@ -499,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
       m.init();
     }
     
-    console.clear();
+     
     var messenger = new Messenger($('#role-heading'));
 
     setTimeout(animateElements10, 74);
@@ -598,7 +621,7 @@ document.addEventListener("DOMContentLoaded", () => {
       m.init();
     }
     
-    console.clear();
+     
     var messenger = new Messenger($('#awards-heading'));
  
   }
@@ -694,7 +717,7 @@ document.addEventListener("DOMContentLoaded", () => {
       m.init();
     }
     
-    console.clear();
+     
     var messenger = new Messenger($('#folio'));
     
   }
@@ -790,7 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
       m.init();
     }
     
-    console.clear();
+     
     var messenger = new Messenger($('#folio-year'));
     
   }
@@ -969,6 +992,11 @@ document.addEventListener("DOMContentLoaded", () => {
           clipPath: clipPathValues[index % clipPathValues.length],
           duration: 1,
           delay: index * 0.1,
+          onComplete: () => {
+            setTimeout(() => {
+              enableSwipesAndKeys();
+            }, 950); 
+          }
         });
       });
     });
